@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
 
         {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
-          <label> Username
+          <label> Email
             <input
               type="text"
               value={this.state.username}

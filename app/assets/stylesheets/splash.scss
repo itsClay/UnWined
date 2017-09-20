@@ -15,7 +15,7 @@ a {
   min-height: 100%;
   width: 100%;
   background-color: black;
-  background-image: url(grapes_bg2.png);
+  background-image: url(http://res.cloudinary.com/do2rg2v7p/image/upload/v1505951051/grapes_bg_dq9fvt.png);
   -webkit-background-size: cover;
   -moz-background-size: center cover;
   background-size: cover;
@@ -33,14 +33,17 @@ a {
   margin: 100px auto;
   padding: 15px;
   border-radius: 3px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .session-container * {
   display: flex;
   margin-top: 12px;
   flex-direction: column;
 }
-
+.session-container input {
+  font-size: 20px;
+  height: 32px;
+}
 .login-nav {
   padding-top: 10px;
   padding-right: 10px;
@@ -71,6 +74,7 @@ a {
   cursor: pointer;
 }
 .submit-btn {
+
   justify-content: center;
   align-items: center;
   height: 32px;
