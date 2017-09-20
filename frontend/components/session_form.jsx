@@ -10,6 +10,8 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.renderSignupOrLogin = this.renderSignupOrLogin.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   handleSubmit(e) {
@@ -18,24 +20,19 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  componentWillReceiveProps(newProps) {
-    if (newProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
-
   renderSignupOrLogin() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign Up</Link>;
-    } else {
-      return <Link to="/login">Login</Link>;
-    }
+    return (this.props.formType === 'login') ? "Login" : "Sign Up";
   }
 
   update(field) {
     return (e) => {
       this.setState( { [field]: e.target.value } );
     };
+  }
+
+  guestLogin(e){
+    this.setState({ username: 'Guest', password: '123456' });
+    this.handleSubmit(e);
   }
 
   renderErrors() {
@@ -50,8 +47,8 @@ class SessionForm extends React.Component {
 
   render(){
     return (
-      <div>
-        {this.renderSignupOrLogin()}
+      <div className="session-container">
+
         {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <label> Username
@@ -60,14 +57,20 @@ class SessionForm extends React.Component {
               value={this.state.username}
               onChange={this.update('username')}></input>
           </label>
-          <label>
+          <label> Password
             <input
               type="password"
               value={this.state.password}
               onChange={this.update('password')}></input>
           </label>
-          <input type="submit" value={this.pro}/>
+          <input
+            type="submit"
+            className="submit-btn"
+            value={this.renderSignupOrLogin()}/>
         </form>
+        <a
+          className="guest-link"
+          onClick={this.guestLogin}>Guest Login</a>
       </div>
     );
   }

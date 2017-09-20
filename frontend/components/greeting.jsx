@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SessionFormContainer from './session_form_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+
 
 class Greeting extends React.Component {
   constructor(props){
@@ -8,9 +11,17 @@ class Greeting extends React.Component {
 
   noSession(logout) {
     return (
-      <div>
-        <Link to="/signup">Signup</Link>
-        <Link to="/login">Login</Link>
+      <div className="splash-wrapper" value="">
+        <nav className="login-nav">
+          <li className="button-sign-in">
+            <Link to="/signup">Create a New Account</Link>
+          </li>
+          <li className="button-sign-in">
+            <Link to="/login">Login</Link>
+          </li>
+        </nav>
+        <AuthRoute path="/login" component={SessionFormContainer} />
+        <AuthRoute path="/signup" component={SessionFormContainer} />
       </div>
     );
   }
@@ -20,7 +31,8 @@ class Greeting extends React.Component {
       <div>
         <p>Welcome, {currentUser.username}</p>
         <button
-          onClick={logout}>Logout</button>
+          onClick={logout}>Logout
+        </button>
       </div>
     );
   }
