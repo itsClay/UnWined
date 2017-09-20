@@ -30,9 +30,8 @@ class SessionForm extends React.Component {
     };
   }
 
-  guestLogin(e){
-    this.setState({ username: 'Guest', password: '123456' });
-    this.handleSubmit(e);
+  guestLogin() {
+    this.props.login({ username: 'Guest', password: '123456' });
   }
 
   renderErrors() {
@@ -63,10 +62,11 @@ class SessionForm extends React.Component {
               value={this.state.password}
               onChange={this.update('password')}></input>
           </label>
-          <input
+
+          <button
             type="submit"
             className="submit-btn"
-            value={this.renderSignupOrLogin()}/>
+            >{this.renderSignupOrLogin()}</button>
         </form>
         <a
           className="guest-link"

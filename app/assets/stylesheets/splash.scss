@@ -68,8 +68,20 @@ a {
 }
 .guest-link {
   margin: 10px auto;
+  cursor: pointer;
 }
 .submit-btn {
-  height: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  font-size: 15px;
+  color: white;
   font-family: $font-robo;
+  border-radius: 5px;
+  border: 2px solid;
+  background-color: $light-purple
+}
+.submit-btn:hover {
+  cursor: pointer;
+  background-color: $dark-purple
 }
