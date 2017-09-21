@@ -13,7 +13,7 @@ class Api::WinesController < ApplicationController
   end
 
   def show
-    @wine = Wine.find_by(params[:id])
+    @wine = Wine.find(params[:id])
   end
 
   def update
