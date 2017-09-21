@@ -13,5 +13,5 @@
  *= require_self
  *= require_tree .
  */
-@import "./reset/reset";
-@import "./splash";
+@import css_reset;
+@import splash;
