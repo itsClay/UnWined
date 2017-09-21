@@ -66,11 +66,13 @@ class SessionForm extends React.Component {
           <button
             type="submit"
             className="submit-btn"
-            >{this.renderSignupOrLogin()}</button>
+            >{this.renderSignupOrLogin()}
+          </button>
         </form>
-        <a
-          className="guest-link"
-          onClick={this.guestLogin}>Guest Login</a>
+        <button
+          className="submit-btn"
+          onClick={this.guestLogin}>Guest Login
+        </button>
       </div>
     );
   }

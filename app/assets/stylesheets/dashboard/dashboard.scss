@@ -1,0 +1,62 @@
+@import "../colors.scss";
+
+.dash-nav {
+  display: flex;
+  height: 52px;
+  background-color: $light-purple;
+  color: white;
+  align-items: center;
+  font-family: $font-robo;
+}
+.inner {
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.left-nav, .right-nav {
+  display: flex
+}
+.left-nav {
+  align-items: center;
+}
+.left-nav span {
+  align-items: center;
+  font-size: 26px;
+}
+.right-nav {
+  align-items: center;
+}
+
+.user-welcome {
+  padding-right: 15px;
+}
+.dash-logout {
+  height: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+  color: white;
+  font-size: 13px;
+  border: 2px solid white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.dash-logout:hover {
+  background-color: $lighter-purple;
+}
+
+.nav-links {
+  display: flex;
+}
+.nav-links li {
+  display: flex;
+  align-items: center;
+  margin-left: 33px;
+}
+.nav-links li a {
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
