@@ -12,6 +12,11 @@ class Greeting extends React.Component {
   noSession(logout) {
     return (
       <div className="splash-wrapper" value="">
+        <div className="splash-info">
+          <div className="logo-img">
+            <img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1506031298/logo2_lu9qjz.png"></img>
+          </div>
+        </div>
         <nav className="login-nav">
           <li className="button-sign-in">
             <Link to="/signup">Create a New Account</Link>

@@ -11,16 +11,24 @@ a {
   text-decoration: none;
 }
 .splash-wrapper {
-  position: fixed;
-  min-height: 100%;
+  position: relative;
+  min-height: 100vh;
   width: 100%;
   background-color: black;
-  background-image: url(http://res.cloudinary.com/do2rg2v7p/image/upload/v1506019727/grapes_bg_mruy3k.png);
+  background-image: url(http://res.cloudinary.com/do2rg2v7p/image/upload/v1506030216/grapes_bg_h9y5fh.png);
   -webkit-background-size: cover;
   -moz-background-size: center cover;
   background-size: cover;
   background-position: center top;
 }
+.splash-info {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
+}
+
 .session-container {
   font-family: $font-robo;
   font-weight: 500;
@@ -64,13 +72,19 @@ a {
   margin-left: 10px;
 }
 .button-sign-in:hover {
-  background-color: $lighter-purple;
+  background-color: $dark-purple;
 }
 .button-sign-in a {
   font-family: sans-serif;
   color: white;
 }
-
+.session-container h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
 .submit-btn {
   margin-top: 20px;
   justify-content: center;
