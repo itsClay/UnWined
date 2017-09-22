@@ -19,9 +19,9 @@ const removeWine = wine => ({
   wine
 });
 
-export const fetchWines = () => dispatch => (
-  APIUtil.fetchWines().then(wines => dispatch(receiveAllWines(wines)))
-);
+export const fetchWines = () => dispatch => {
+  return APIUtil.fetchWines().then(wines => dispatch(receiveAllWines(wines)));
+};
 
 export const fetchWine = (id) => dispatch => (
   APIUtil.fetchWine(id).then(wineResp => dispatch(receiveWine(wineResp)))
@@ -36,5 +36,5 @@ export const updateWine = (wine) => dispatch => (
 );
 
 export const deleteWine = (wine) => dispatch => (
-  APIUtil.removeWine(wine).then(wineResp => dispatch(removeWine(wineResp)))
+  APIUtil.deleteWine(wine).then(wineResp => dispatch(removeWine(wineResp)))
 );

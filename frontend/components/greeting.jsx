@@ -18,12 +18,12 @@ class Greeting extends React.Component {
           </div>
         </div>
         <nav className="login-nav">
-          <li className="button-sign-in">
-            <Link to="/signup">Create a New Account</Link>
-          </li>
-          <li className="button-sign-in">
-            <Link to="/login">Login</Link>
-          </li>
+          <Link to="/signup">
+            <button className="button-sign-in">Create a New Account</button>
+          </Link>
+          <Link to="/login">
+            <button className="button-sign-in">Login</button>
+          </Link>
         </nav>
         <AuthRoute path="/login" pType="login" component={SessionFormContainer} />
         <AuthRoute path="/signup" pType="signin" component={SessionFormContainer} />

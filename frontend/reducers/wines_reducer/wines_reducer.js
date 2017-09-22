@@ -3,6 +3,8 @@ import { RECEIVE_ALL_WINES,
          REMOVE_WINE } from '../../actions/wine_actions';
 import { merge } from 'lodash.merge';
 
+console.log(RECEIVE_ALL_WINES);
+
 const DEFAULT_STATE = {
   1: {
     id: 1,
@@ -17,14 +19,15 @@ const DEFAULT_STATE = {
 
 const WinesReducer = (state = DEFAULT_STATE, action) => {
   Object.freeze(state);
-  let newWineState;
+  let newWineState = Object.assign({}, state);
 
   switch(action.type) {
     case RECEIVE_ALL_WINES:
       return Object.assign({}, action.wines);
     case RECEIVE_WINE:
-      const newWine = {[action.wine.id]: action.wine};
-      newWineState[action.wine.id] = newWine;
+      // const newWine = {[action.wine.id]: action.wine};
+      // newWineState[action.wine.id] = newWine;
+      newWineState = merge(newWineState, action.wine);
       return newWineState;
     case REMOVE_WINE:
       delete newWineState[action.wine.id];
