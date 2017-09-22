@@ -36,6 +36,7 @@ a {
   display: flex;
   flex-direction: column;
   width: 25%;
+  min-width: 250px;
   background-color: $sand;
   margin: 100px auto;
   padding: 15px;
@@ -69,7 +70,7 @@ a {
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 10px;
-  background: rgba(19, 19, 19, 0.36)
+  background: rgba(19, 19, 19, 0.36);
 }
 .button-sign-in:hover {
   background-color: $dark-purple;

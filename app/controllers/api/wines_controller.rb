@@ -37,7 +37,7 @@ class Api::WinesController < ApplicationController
   private
 
   def wine_params
-    require(:wine).permit(:wine_type, :vineyard, :location, :year, :img_url)
+    params.require(:wine).permit(:wine_type, :vineyard, :location, :year, :img_url)
   end
 
 end

@@ -14,17 +14,9 @@ class SessionForm extends React.Component {
     this.guestLogin = this.guestLogin.bind(this);
   }
 
-  componentWillReceiveProps(newProps) {
-
-    if (this.props.match.path !== newProps.match.path) {
-      console.log(this.props.formType);
-      console.log(this.props.processForm);
-      console.log(newProps.history);
-      this.props.clearErrors();
-    }
-    // if (this.props.errors.length > 0) {
-    //   this.props.clearErrors();
-    // }
+  componentWillMount() {
+    console.log(this.props);
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
