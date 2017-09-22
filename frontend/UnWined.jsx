@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 // import { signup, login, logout } from './util/session_api_util';
 import { fetchWines, fetchWine, createWine, updateWine, deleteWine } from
-'./util/wines_api_util';
+'./actions/wine_actions';
 import { RECEIVE_ALL_WINES,
          RECEIVE_WINE,
          REMOVE_WINE } from './actions/wine_actions';
