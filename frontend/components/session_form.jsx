@@ -14,12 +14,12 @@ class SessionForm extends React.Component {
     this.guestLogin = this.guestLogin.bind(this);
   }
 
-  componentWillUpdate(newProps, nextState) {
-    console.log(this.props.formType);
-    console.log(this.props.processForm);
-    console.log(newProps.history);
-    console.log('nextState: ', nextState);
+  componentWillReceiveProps(newProps) {
+
     if (this.props.match.path !== newProps.match.path) {
+      console.log(this.props.formType);
+      console.log(this.props.processForm);
+      console.log(newProps.history);
       this.props.clearErrors();
     }
     // if (this.props.errors.length > 0) {
