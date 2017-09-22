@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -14,6 +14,19 @@ class SessionForm extends React.Component {
     this.guestLogin = this.guestLogin.bind(this);
   }
 
+  componentWillUpdate(newProps, nextState) {
+    console.log(this.props.formType);
+    console.log(this.props.processForm);
+    console.log(newProps.history);
+    console.log('nextState: ', nextState);
+    if (this.props.match.path !== newProps.match.path) {
+      this.props.clearErrors();
+    }
+    // if (this.props.errors.length > 0) {
+    //   this.props.clearErrors();
+    // }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -26,6 +39,7 @@ class SessionForm extends React.Component {
 
   update(field) {
     return (e) => {
+      this.props.clearErrors();
       this.setState( { [field]: e.target.value } );
     };
   }
@@ -36,7 +50,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="session-errors">
         {
           this.props.errors.map((e, idx) => <li key={`error-${idx}`}>{ e }</li>)
         }
@@ -48,9 +62,9 @@ class SessionForm extends React.Component {
     return (
       <div className="session-container">
 
-        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <h1>{this.renderSignupOrLogin()}</h1>
+          <div>{this.renderErrors()}</div>
           <label> Email
             <input
               type="text"
@@ -79,4 +93,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

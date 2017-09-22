@@ -17,7 +17,7 @@ class Api::WinesController < ApplicationController
   end
 
   def update
-    @wine = Wine.find_by(params[:id])
+    @wine = Wine.find(params[:id])
     if @wine.update(wine_params)
       render :show
     else
@@ -26,7 +26,7 @@ class Api::WinesController < ApplicationController
   end
 
   def destroy
-    @wine = Wine.find_by(params[:id])
+    @wine = Wine.find(params[:id])
     if @wine.destroy
       render :index
     else

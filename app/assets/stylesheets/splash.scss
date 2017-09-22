@@ -36,7 +36,6 @@ a {
   display: flex;
   flex-direction: column;
   width: 25%;
-  height: 320px;
   background-color: $sand;
   margin: 100px auto;
   padding: 15px;
@@ -100,4 +99,10 @@ a {
 .submit-btn:hover {
   cursor: pointer;
   background-color: $dark-purple
+}
+.session-errors {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: red;
+  text-align: center;
 }
