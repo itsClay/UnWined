@@ -25,8 +25,8 @@ class Greeting extends React.Component {
             <button className="button-sign-in">Login</button>
           </Link>
         </nav>
-        <AuthRoute path="/login" pType="login" component={SessionFormContainer} />
-        <AuthRoute path="/signup" pType="signin" component={SessionFormContainer} />
+        <AuthRoute path="/login" component={SessionFormContainer} />
+        <AuthRoute path="/signup" component={SessionFormContainer} />
       </div>
     );
   }

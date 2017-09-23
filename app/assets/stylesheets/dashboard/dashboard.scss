@@ -24,6 +24,7 @@
 .left-nav span {
   align-items: center;
   font-size: 26px;
+  color: white;
 }
 .right-nav {
   align-items: center;
@@ -49,14 +50,19 @@
 
 .nav-links {
   display: flex;
+  color: white;
+  margin-left: 15px;
 }
-.nav-links li {
-  display: flex;
-  align-items: center;
-  margin-left: 33px;
-}
-.nav-links li a {
+// .nav-links li {
+//   display: flex;
+//   align-items: center;
+//   margin-left: 33px;
+// }
+.nav-links a {
   align-items: center;
   text-decoration: none;
   color: white;
+}
+.nav-links a:hover {
+  font-weight: 900;
 }

@@ -1,4 +1,4 @@
-import Dashboard from './dashboard';
+import Home from './home';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
@@ -12,5 +12,5 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Dashboard)
+  connect(mapStateToProps, mapDispatchToProps)(Home)
 );

@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import SessionFormContainer from '../session_form_container';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
+import WinesContainer from '../wines/wines_index_container';
 
-class Dashboard extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
     this.currentUser = this.props.currentUser;
@@ -14,6 +15,7 @@ class Dashboard extends React.Component {
     // ...
   }
 
+
   render () {
     return (
       <div>
@@ -21,10 +23,13 @@ class Dashboard extends React.Component {
           <div className="inner">
             <div className="left-nav">
               <span>UnWined</span>
-              <ul className="nav-links">
-                <li><a href="#">The Cellar</a></li>
-                <li><a href="#">Wines</a></li>
-              </ul>
+              <div className="nav-links">
+                <NavLink
+                  to="/wines">The Cellar
+                </NavLink>
+                </div>
+              <div className="nav-links"><NavLink to="/profile">Feed</NavLink></div>
+
             </div>
             <div className="right-nav">
               <p className="user-welcome">Welcome, {this.currentUser.username}</p>
@@ -35,9 +40,10 @@ class Dashboard extends React.Component {
             </div>
           </div>
         </nav>
+
       </div>
     );
   }
 }
 
-export default Dashboard;
+export default Home;

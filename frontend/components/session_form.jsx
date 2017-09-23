@@ -15,7 +15,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.props);
     this.props.clearErrors();
   }
 
@@ -31,7 +30,6 @@ class SessionForm extends React.Component {
 
   update(field) {
     return (e) => {
-      this.props.clearErrors();
       this.setState( { [field]: e.target.value } );
     };
   }
