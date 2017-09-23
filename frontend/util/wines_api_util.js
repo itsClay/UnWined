@@ -21,6 +21,7 @@ export const createWine = (wine) => {
 };
 
 export const updateWine = (wine) => {
+  console.log(wine);
   return $.ajax({
     method: 'PATCH',
     url: `api/wines/${wine.id}`,

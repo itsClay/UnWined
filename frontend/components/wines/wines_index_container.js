@@ -21,6 +21,7 @@ const mapDispatchToProps = (dispatch) => ({
   deleteWine: (wine) => dispatch(deleteWine(wine))
 });
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(WinesIndex)
+export default withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps)(WinesIndex)
 );

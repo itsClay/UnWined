@@ -32,7 +32,7 @@ export const createWine = (wine) => dispatch => (
 );
 
 export const updateWine = (wine) => dispatch => (
-  APIUtil.updateWine().then(wineResp => dispatch(receiveWine(wineResp)))
+  APIUtil.updateWine(wine).then(wineResp => dispatch(receiveWine(wineResp)))
 );
 
 export const deleteWine = (wine) => dispatch => (

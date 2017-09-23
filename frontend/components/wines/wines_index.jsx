@@ -16,15 +16,14 @@ class WinesIndex extends React.Component {
 
   render() {
     let wines = this.props.wines;
-    console.log(wines);
-
     return (
       <div>
         <h1>Wines Page</h1>
+        <Link to="/wines/new"><button>Make a Wine</button></Link>
         <ul>
         {
           wines.map( wine => (
-            <WinesIndexItem wine={wine} />
+            <WinesIndexItem key={`wine-${wine.id}`} wine={wine} />
           ))
         }
         </ul>
