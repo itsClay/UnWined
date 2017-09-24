@@ -19,7 +19,10 @@ const mapStateToProps = (state, ownProps) => {
     formType = "edit";
   }
 
-  return { wine, formType };
+  return {
+    wine,
+    formType,
+    errors: state.errors.wines };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

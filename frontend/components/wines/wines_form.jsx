@@ -82,11 +82,11 @@ class WinesForm extends React.Component {
                 </div>
 
                 <div className="form-submit-wrapper">
+                  <Link to="/wines"><button>Back</button></Link>
                   <button
                     className="wine-form-btn"
                     type="submit"
                   >{formTitle}</button>
-                  <Link to="/wines"><button>Back</button></Link>
                 </div>
               </form>
             </div>

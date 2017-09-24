@@ -93,6 +93,14 @@
     flex: 2;
   }
 }
+.form-submit-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+  button {
+    margin-left: 15px;
+  }
+}
 // wine#show related styles
 .wine-show {
   width: 700px;
