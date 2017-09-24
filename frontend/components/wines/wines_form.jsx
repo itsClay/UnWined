@@ -38,44 +38,60 @@ class WinesForm extends React.Component {
     console.log(this.props.match);
     const formTitle = this.props.formType === 'new' ? 'Create Wine' : 'Edit Wine';
     return(
-      <div className="wine-form">
-        <h3>{ formTitle }</h3>
-        <Link to="/wines"><button>Back</button></Link>
-        <form onSubmit={this.handleSubmit}>
-          <label> Type
-            <input
-              type="text"
-              value={this.state.wine_type}
-              onChange={this.update('wine_type')}/>
-          </label>
-          <label> Vineyard
-            <input
-              type="text"
-              value={this.state.vineyard}
-              onChange={this.update('vineyard')}/>
-          </label>
-          <label> Location
-            <input
-              type="text"
-              value={this.state.location}
-              onChange={this.update('location')}/>
-          </label>
-          <label> Year
-            <input
-              type="text"
-              value={this.state.year}
-              onChange={this.update('year')}/>
-          </label>
-          <label> Image Url
-            <input
-              type="text"
-              value={this.state.img_url}
-              onChange={this.update('img_url')}/>
-          </label>
-          <button
-            className="wine-form-btn"
-            type="submit">{formTitle}</button>
-        </form>
+      <div className="wines-container">
+        <div className="wine-idx-container">
+          <div className="wine-form">
+            <div className="wine-show-header">{ formTitle }</div>
+
+            <div className="form-wrapper">
+              <form onSubmit={this.handleSubmit}>
+                <div className="input-row">
+                  <label>Type</label>
+                    <input
+                      type="text"
+                      value={this.state.wine_type}
+                      onChange={this.update('wine_type')}/>
+                </div>
+                <div className="input-row">
+                  <label>Vineyard</label>
+                    <input
+                      type="text"
+                      value={this.state.vineyard}
+                      onChange={this.update('vineyard')}/>
+                </div>
+                <div className="input-row">
+                  <label>Location</label>
+                    <input
+                      type="text"
+                      value={this.state.location}
+                      onChange={this.update('location')}/>
+                </div>
+                <div className="input-row">
+                  <label>Year</label>
+                    <input
+                      type="number"
+                      value={this.state.year}
+                      onChange={this.update('year')}/>
+                </div>
+                <div className="input-row">
+                  <label>Image Url</label>
+                    <input
+                      type="text"
+                      value={this.state.img_url}
+                      onChange={this.update('img_url')}/>
+                </div>
+
+                <div className="form-submit-wrapper">
+                  <button
+                    className="wine-form-btn"
+                    type="submit"
+                  >{formTitle}</button>
+                  <Link to="/wines"><button>Back</button></Link>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

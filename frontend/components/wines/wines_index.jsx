@@ -17,16 +17,23 @@ class WinesIndex extends React.Component {
   render() {
     let wines = this.props.wines;
     return (
-      <div>
-        <h1>Wines Page</h1>
-        <Link to="/wines/new"><button>Make a Wine</button></Link>
-        <ul>
-        {
-          wines.map( wine => (
-            <WinesIndexItem key={`wine-${wine.id}`} wine={wine} />
-          ))
-        }
-        </ul>
+      <div className="wines-container">
+
+        <div className="wine-idx-container">
+          <div className="wine-idx-header">
+            <h1>Wines Page</h1>
+            <Link to="/wines/new"><button>Make a Wine</button></Link>
+          </div>
+          <div className="wine-idx-body">
+            <ul>
+              {
+                wines.map( wine => (
+                  <WinesIndexItem key={`wine-${wine.id}`} wine={wine} />
+                ))
+              }
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }

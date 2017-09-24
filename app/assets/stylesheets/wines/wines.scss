@@ -1,15 +1,117 @@
-.wine-index-item {
+@import '../colors';
 
+// wines#index related styles
+.wines-container {
+  display: flex;
+  justify-content: center;
+  font-family: $font-robo;
+  background-color: $bg-sand;
+  height: 100%;
+}
+.wine-idx-container {
+  display: flex;
+  margin-top: 20px;
+  width: 700px;
+  min-height: 500px;
+  background-color: white;
+  flex-direction: column;
+}
+.wine-idx-container h1 {
+  font-size: 22px;
+}
+.wine-idx-header {
+  display: flex;
+  height: 35px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-bottom: 1px solid black;
+  align-items: center;
+  justify-content: space-between;
+}
+.wine-index-item {
+  margin: 12px 20px 0px 20px;
+  padding-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+.wine-index-item * {
+  text-decoration: none;
+}
+.wine-item-img {
+  max-height: 100px;
+  overflow: hidden;
+  width: 100px;
 }
 .wine-index-item img {
   height: 100px;
-  width: 100px;
 }
-
-.wine-thumbnail {
-  height: 100px;
-
-  img{
-    height: 100%
+.wine-item-details {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.wine-item-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+}
+.wine-item-title span {
+  margin-left: 15px;
+}
+.wine-item-detail {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.wine-item-detail span {
+  margin-left: 15px;
+  margin-bottom: 3px;
+}
+// wine#edit / wine#new, wine#new Form Related Styles
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.wine-form {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  form {
+    width: 66%;
   }
+}
+.input-row {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+  label {
+    flex: 1;
+  }
+  input {
+    flex: 2;
+  }
+}
+// wine#show related styles
+.wine-show {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+.wine-show-header {
+  display: flex;
+  justify-content: center;
+  font-size: 29px;
+  margin: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid black;
+  span {
+    margin-left: 10px;
+  }
+}
+.wine-show-body {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px;
 }

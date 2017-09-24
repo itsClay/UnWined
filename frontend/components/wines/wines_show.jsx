@@ -21,20 +21,34 @@ class WinesShow extends React.Component {
     this.props.deleteWine(this.props.match.params.wineId);
   }
 
+  addDefaultSrc(e) {
+    e.target.src = 'http://res.cloudinary.com/do2rg2v7p/image/upload/v1506207089/default_glass_vehnqt.jpg';
+  }
+
   render(){
     const wine = this.props.wines[this.props.match.params.wineId];
     console.log(wine);
     return(
-      <div className="wine-show">
-        <div className="wine-thumbnail">
-          <img src={wine.img_url} alt={wine.wine_type}></img>
-        </div>
-          <span>Type: {wine.wine_type}</span>
-          <span>Vineyard: {wine.vineyard}</span>
-          <span>Location: {wine.location}</span>
-          <span>Year: {wine.year}</span>
+      <div className="wines-container">
+        <div className="wine-idx-container">
+          <div className="wine-show">
+            <div className="wine-show-header">
+              <span>{wine.vineyard}</span>
+              <span>{wine.wine_type}</span>
+            </div>
+            <div className="wine-show-body">
+              <div className="wine-item-img">
+                <img onError={this.addDefaultSrc} src={wine.img_url} alt={wine.wine_type}></img>
+              </div>
+              <div className="wine-item-details">
+                <span>{wine.location}</span>
+                <span>{wine.year}</span>
+              </div>
+              <Link to={`/wines/${wine.id}/edit`}><button>Edit Wine</button></Link>
+            </div>
+          </div>
 
-          <Link to={`/wines/${wine.id}/edit`}><button>Edit Wine</button></Link>
+        </div>
       </div>
     );
   }
