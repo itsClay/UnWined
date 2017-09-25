@@ -7,6 +7,7 @@
   font-family: $font-robo;
   background-color: $bg-sand;
   height: 100%;
+  // flex-direction: column;
 }
 .wine-idx-container {
   display: flex;
@@ -25,6 +26,7 @@
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
+  padding-bottom: 15px;
   border-bottom: 1px solid black;
   align-items: center;
   justify-content: space-between;
@@ -43,6 +45,9 @@
   max-height: 100px;
   overflow: hidden;
   width: 100px;
+  // img {
+  //   object-fit: cover;
+  // }
 }
 .wine-index-item img {
   height: 100px;
@@ -51,6 +56,9 @@
   display: flex;
   flex-direction: column;
   width: 60%;
+  span {
+    margin-bottom: 3px;
+  }
 }
 .wine-item-title {
   display: flex;
@@ -122,4 +130,22 @@
   display: flex;
   justify-content: space-between;
   margin: 12px;
+}
+.input-btn {
+  display: flex;
+  align-items:flex-start;
+
+  button {
+    height: 25px;
+    background-color: $dark-purple;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  :hover {
+    background-color: $light-purple;
+  }
 }

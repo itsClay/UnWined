@@ -21,8 +21,12 @@ class WinesIndex extends React.Component {
 
         <div className="wine-idx-container">
           <div className="wine-idx-header">
-            <h1>Wines Page</h1>
-            <Link to="/wines/new"><button>Make a Wine</button></Link>
+            <h1>Wines</h1>
+            <Link to="/wines/new">
+              <div className="input-btn">
+                <button>Make a Wine</button>
+              </div>
+            </Link>
           </div>
           <div className="wine-idx-body">
             <ul>

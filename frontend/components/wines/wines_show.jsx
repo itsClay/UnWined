@@ -38,16 +38,25 @@ class WinesShow extends React.Component {
             </div>
             <div className="wine-show-body">
               <div className="wine-item-img">
-                <img onError={this.addDefaultSrc} src={wine.img_url} alt={wine.wine_type}></img>
+                <img
+                  onError={this.addDefaultSrc}
+                  src={wine.img_url}
+                  alt={wine.wine_type}></img>
               </div>
               <div className="wine-item-details">
                 <span>{wine.location}</span>
                 <span>{wine.year}</span>
               </div>
-              <Link to={`/wines/${wine.id}/edit`}><button>Edit Wine</button></Link>
+              <Link to={`/wines/${wine.id}/edit`}>
+                <div className="input-btn">
+                  <button>Edit Wine</button>
+                </div>
+              </Link>
+            </div>
+            <div className="reviews wine-show-header">
+              <h1>Reviews Go Here... </h1>
             </div>
           </div>
-
         </div>
       </div>
     );

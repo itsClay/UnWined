@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   let wine = { vineyard: "",
                wine_type: "",
                location: "",
-               year: 0,
+               year: 2017,
                reviews: [],
                img_url: "",
              };
@@ -22,7 +22,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     wine,
     formType,
-    errors: state.errors.wines };
+    errors: state.errors.wines
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

@@ -6,6 +6,7 @@ class WinesForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.wine;
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +35,16 @@ class WinesForm extends React.Component {
     );
   }
 
+  renderErrors() {
+    return (
+      <ul className="session-errors">
+        {
+          this.props.errors.map((e, idx) => <li key={`error-${idx}`}>{ e }</li>)
+        }
+      </ul>
+    );
+  }
+
   render () {
     console.log(this.props.match);
     const formTitle = this.props.formType === 'new' ? 'Create Wine' : 'Edit Wine';
@@ -45,6 +56,7 @@ class WinesForm extends React.Component {
 
             <div className="form-wrapper">
               <form onSubmit={this.handleSubmit}>
+                <div>{this.renderErrors()}</div>
                 <div className="input-row">
                   <label>Type</label>
                     <input
@@ -82,11 +94,17 @@ class WinesForm extends React.Component {
                 </div>
 
                 <div className="form-submit-wrapper">
-                  <Link to="/wines"><button>Back</button></Link>
-                  <button
-                    className="wine-form-btn"
-                    type="submit"
-                  >{formTitle}</button>
+                  <Link to="/wines">
+                    <div className="input-btn">
+                      <button>Back</button>
+                    </div>
+                  </Link>
+                  <div className="input-btn">
+                    <button
+                      className="wine-form-btn"
+                      type="submit"
+                    >{formTitle}</button>
+                  </div>
                 </div>
               </form>
             </div>

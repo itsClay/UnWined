@@ -22,7 +22,7 @@ class Home extends React.Component {
         <nav className="dash-nav">
           <div className="inner">
             <div className="left-nav">
-              <span>UnWined</span>
+              <Link to="/home"><span>UnWined</span></Link>
               <div className="nav-links">
                 <NavLink
                   to="/wines">The Cellar
