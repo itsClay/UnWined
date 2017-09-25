@@ -17,7 +17,7 @@ const WinesIndexItem = ({ wine }) => {
         <div className="wine-item-title">
           <Link to={`/wines/${wine.id}`}>
             <span>{wine.vineyard}</span>
-            <span>{wine.wine_type}</span>
+            <span><i>{wine.wine_type}</i></span>
           </Link>
         </div>
         <div className="wine-item-detail">
