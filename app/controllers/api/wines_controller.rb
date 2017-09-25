@@ -8,7 +8,8 @@ class Api::WinesController < ApplicationController
     if @wine.save
       render :show
     else
-      render json: ['cannot create'] #@wine.errors.full_messages, status: 422
+      # ['cannot create']
+      render json: @wine.errors.full_messages, status: 422
     end
   end
 
@@ -21,7 +22,8 @@ class Api::WinesController < ApplicationController
     if @wine.update(wine_params)
       render :show
     else
-      render json: ['cannot update'] #@wine.errors.full_messages
+      #  ['cannot update']
+      render json: @wine.errors.full_messages
     end
   end
 
@@ -30,7 +32,8 @@ class Api::WinesController < ApplicationController
     if @wine.destroy
       render :index
     else
-      render json: ['cannot delete'] #@wine.errors.full_messages
+      # ['cannot delete']
+      render json: @wine.errors.full_messages
     end
   end
 
