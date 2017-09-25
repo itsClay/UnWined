@@ -13,6 +13,6 @@
 #
 
 class Wine < ApplicationRecord
-  validates :vineyard, :type, :location, :year, :img_url, presence: true
+  validates :vineyard, :wine_type, :location, :year, :img_url, presence: true
   validates :year, length: { minimum: 4, maximum: 4 }
 end

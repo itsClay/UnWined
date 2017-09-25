@@ -20,8 +20,8 @@ const mapStateToProps = (state, ownProps) => {
   }
 
   return {
-    wine,
-    formType,
+    wine: wine,
+    formType: formType,
     errors: state.errors.wines
   };
 };

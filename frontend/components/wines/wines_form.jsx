@@ -21,7 +21,7 @@ class WinesForm extends React.Component {
   }
 
   update(field) {
-    console.log(this.state);
+    console.log(this.props);
     return (e) => {
       this.setState( { [field]: e.target.value } );
     };
@@ -31,7 +31,13 @@ class WinesForm extends React.Component {
     e.preventDefault();
     console.log(this.state);
     this.props.action(this.state).then(
-      () => this.props.history.push(`/wines/${this.props.wine.id}`)
+      () => {
+        if(this.props.wine.id !== undefined) {
+          return this.props.history.push(
+            `/wines/${this.props.wine.id}`
+          );
+        }
+      }
     );
   }
 
