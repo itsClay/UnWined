@@ -5,4 +5,5 @@ json.array! @wines do |wine|
   json.location wine.location
   json.year wine.year
   json.img_url wine.img_url
+  json.checkin_ids wine.checkin_ids
 end

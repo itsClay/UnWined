@@ -1,5 +1,6 @@
 json.array! @users do |user|
-  json.id :id
-  json.username :username
-  json.session_token :session_token
+  json.id user.id
+  json.username user.username
+  json.session_token user.session_token
+  json.checkin_ids user.checkin_ids
 end
