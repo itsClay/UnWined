@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  vineyard   :string           not null
-#  type       :string           not null
+#  wine_type  :string           not null
 #  location   :string           not null
 #  year       :integer          not null
 #  img_url    :string           not null

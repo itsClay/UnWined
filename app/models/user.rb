@@ -18,6 +18,8 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
   attr_reader :password
 
+  has_many :checkins, dependent: :destroy
+
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

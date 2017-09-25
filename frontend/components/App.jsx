@@ -12,13 +12,14 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
 
-    <AuthRoute exact path="/" component={ GreetingContainer } />
     <ProtectedRoute path="/" component={ HomeContainer }/>
       <Switch>
         <ProtectedRoute exact path="/wines" component={ WinesContainer } />
         <ProtectedRoute exact path="/wines/new" component={ WinesFormContainer } />
         <ProtectedRoute exact path="/wines/:wineId" component={ WinesShowContainer } />
         <ProtectedRoute exact path="/wines/:wineId/edit" component={ WinesFormContainer } />
+        <AuthRoute path="/" component={ GreetingContainer } />
+        <Route path="/" component={ () => <Redirect to="/" /> } />
       </Switch>
 
   </div>

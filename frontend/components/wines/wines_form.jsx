@@ -16,10 +16,6 @@ class WinesForm extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState(newProps.wine);
-  }
-
   update(field) {
     console.log(this.props);
     return (e) => {

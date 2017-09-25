@@ -37,6 +37,9 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid black;
+  &:last-child {
+    border-bottom: 0;
+  }
 }
 .wine-index-item * {
   text-decoration: none;
