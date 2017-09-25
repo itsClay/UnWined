@@ -58,7 +58,6 @@ class WinesForm extends React.Component {
         <div className="wine-idx-container">
           <div className="wine-form">
             <div className="wine-show-header">{ formTitle }</div>
-
             <div className="form-wrapper">
               <form onSubmit={this.handleSubmit}>
                 <div>{this.renderErrors()}</div>

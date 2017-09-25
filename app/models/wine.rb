@@ -14,5 +14,6 @@
 
 class Wine < ApplicationRecord
   validates :vineyard, :wine_type, :location, :year, :img_url, presence: true
-  validates :year, length: { minimum: 4, maximum: 4 }
+  validates_inclusion_of :year, in: 1500..2017,
+                                message: "year must be in valid range"
 end
