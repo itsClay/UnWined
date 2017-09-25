@@ -1,6 +1,6 @@
 class Api::WinesController < ApplicationController
   def index
-    @wines = Wine.all.includes(:checkins)
+    @wines = Wine.all
   end
 
   def create
@@ -13,7 +13,7 @@ class Api::WinesController < ApplicationController
   end
 
   def show
-    @wine = Wine.find(params[:id]).includes(:checkins)
+    @wine = Wine.find(params[:id])
   end
 
   def update

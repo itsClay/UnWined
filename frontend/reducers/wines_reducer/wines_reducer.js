@@ -3,8 +3,6 @@ import { RECEIVE_ALL_WINES,
          REMOVE_WINE } from '../../actions/wine_actions';
 import merge from 'lodash.merge';
 
-console.log(RECEIVE_ALL_WINES);
-
 const DEFAULT_STATE = {
   1: {
     id: 1,
