@@ -52,7 +52,6 @@ class WinesForm extends React.Component {
   }
 
   render () {
-    console.log(this.props.match);
     const formTitle = this.props.formType === 'new' ? 'Create Wine' : 'Edit Wine';
     return(
       <div className="wines-container">
