@@ -7,7 +7,6 @@ class CreateCheckins < ActiveRecord::Migration[5.1]
       t.integer :user_id, null: false
       t.timestamps
     end
-    add_index :checkins, :user_id, unique: true
-    add_index :checkins, :wine_id, unique: true
+    add_index :checkins, [:user_id, :wine_id]
   end
 end

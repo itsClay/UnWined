@@ -22,6 +22,6 @@ class Checkin < ApplicationRecord
   belongs_to :wine,
     primary_key: :id,
     foreign_key: :wine_id,
-    class_Name: :Wine
+    class_name: :Wine
 
 end

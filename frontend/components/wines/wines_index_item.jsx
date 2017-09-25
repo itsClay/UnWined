@@ -27,7 +27,7 @@ const WinesIndexItem = ({ wine }) => {
       </div>
 
       <div className="review input-btn">
-        <button>Add Review</button>
+        <button>Check-in</button>
       </div>
     </div>
   );
