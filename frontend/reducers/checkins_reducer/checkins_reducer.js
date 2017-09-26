@@ -9,9 +9,11 @@ const CheckinsReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_ALL_CHECKINS:
-      const wines = {};
-      action.checkins.forEach( (checkin) => ( checkin[checkin.id] = checkin ));
-      return wines;
+      newCheckinState = merge(
+                        {},
+                        newCheckinState,
+                        action.checkins );
+      return newCheckinState;
     case RECEIVE_CHECKIN:
       // const newWine = {[action.wine.id]: action.wine};
       // newWineState[action.wine.id] = newWine;

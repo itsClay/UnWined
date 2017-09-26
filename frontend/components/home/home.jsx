@@ -28,7 +28,7 @@ class Home extends React.Component {
                   to="/wines">The Cellar
                 </NavLink>
                 </div>
-              <div className="nav-links"><NavLink to="/profile">Feed</NavLink></div>
+              <div className="nav-links"><NavLink to="/feed">Feed</NavLink></div>
 
             </div>
             <div className="right-nav">

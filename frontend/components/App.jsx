@@ -5,6 +5,7 @@ import HomeContainer from './home/home_container';
 import WinesContainer from './wines/wines_index_container';
 import WinesShowContainer from './wines/wines_show_container';
 import WinesFormContainer from './wines/wines_form_container';
+import CheckinsIndexContainer from './checkins/checkins_index_container';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -18,6 +19,7 @@ const App = () => (
         <ProtectedRoute exact path="/wines/new" component={ WinesFormContainer } />
         <ProtectedRoute exact path="/wines/:wineId" component={ WinesShowContainer } />
         <ProtectedRoute exact path="/wines/:wineId/edit" component={ WinesFormContainer } />
+        <ProtectedRoute exact path="/feed" component={ CheckinsIndexContainer } />
         <AuthRoute path="/" component={ GreetingContainer } />
         <Route path="/" component={ () => <Redirect to="/" /> } />
       </Switch>

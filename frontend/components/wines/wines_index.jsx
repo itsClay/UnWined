@@ -11,7 +11,6 @@ class WinesIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchWines();
-    console.log("did mount", this.props);
   }
 
   render() {
