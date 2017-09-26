@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
                wine_type: "",
                location: "",
                year: 2017,
-               reviews: [],
+               checkins: [],
                img_url: "",
              };
   let formType = "new";

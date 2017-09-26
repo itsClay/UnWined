@@ -5,7 +5,7 @@ const CheckinsIndexItem = ({ checkin }) => {
 
   return (
     <div>
-      <li>{checkin.user_id}</li>
+      <li>{checkin.user.username}</li>
       <li>{checkin.rating}</li>
       <li>{checkin.comment}</li>
     </div>

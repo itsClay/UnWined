@@ -1,8 +1,17 @@
-json.extract! @wine,
-              :id,
-              :vineyard,
-              :wine_type,
-              :location,
-              :year,
-              :img_url,
-              :checkin_ids
+json.wine do
+  json.extract! @wine,
+                :id,
+                :vineyard,
+                :wine_type,
+                :location,
+                :year,
+                :img_url
+end
+json.checkins do
+  @wine.checkins.each do |checkin|
+    json.set! checkin.id do
+      json.partial! 'api/checkins/checkin', checkin: checkin
+      json.user checkin.user
+    end
+  end
+end

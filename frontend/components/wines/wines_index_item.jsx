@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CheckinsFormContainer from '../checkins/checkins_form_container';
 
 const WinesIndexItem = ({ wine }) => {
 
@@ -7,9 +8,30 @@ const WinesIndexItem = ({ wine }) => {
     e.target.src = 'http://res.cloudinary.com/do2rg2v7p/image/upload/v1506207089/default_glass_vehnqt.jpg';
   };
 
+  const style = {
+    overlay : {
+      position        : 'fixed',
+      top             : 0,
+      left            : 0,
+      right           : 0,
+      bottom          : 0,
+      backgroundColor : 'rgba(255, 255, 255, 0.75)',
+      zIndex          : 10
+    },
+    content : {
+      position        : 'fixed',
+      top             : '100px',
+      left            : '150px',
+      right           : '150px',
+      bottom          : '100px',
+      border          : '1px solid #ccc',
+      padding         : '20px',
+      zIndex          : 11
+    }
+  };
+
   return (
     <div className="wine-index-item">
-
       <div className="wine-item-img">
         <img onError={addDefaultSrc} src={wine.img_url} alt={wine.wine_type}></img>
       </div>
@@ -27,7 +49,7 @@ const WinesIndexItem = ({ wine }) => {
       </div>
 
       <div className="review input-btn">
-        <button>Check-in</button>
+        <CheckinsFormContainer wine={ wine }/>
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
 import configureStore from './store/store';
 import Root from './components/root';
-// import { signup, login, logout } from './util/session_api_util';
+
 import { fetchWines,
          fetchWine,
          createWine,
@@ -25,8 +26,8 @@ import { RECEIVE_ALL_CHECKINS,
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  let store;
 
+  let store;
   if (window.currentUser) {
     const preloadedState = {session: { currentUser: window.currentUser }};
     store = configureStore(preloadedState);
@@ -34,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  // Remove these tests when in production
+  // REMOVE THESE TESTS WHEN IN PROD
+  window.store = store;
   window.fetchWines = fetchWines;
   window.fetchWine = fetchWine;
   window.createWine = createWine;
@@ -45,10 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createCheckin = createCheckin;
   window.updateCheckin = updateCheckin;
   window.deleteCheckin = deleteCheckin;
-
-  window.store = store;
-
-
+  //================================
+  Modal.setAppElement(document.body);
 
   ReactDOM.render(<Root store={ store }/>, root);
 });

@@ -14,7 +14,9 @@ class CheckinsIndex extends React.Component {
   }
 
   findTopTenCheckins() {
-    let arr = orderBy(Object.values(this.props.checkins), ['created_at'], ['desc']);
+    const arr = orderBy(Object.values(this.props.checkins),
+                                      ['created_at'],
+                                      ['desc']);
     return arr.slice(0, 10);
   }
 
@@ -22,12 +24,11 @@ class CheckinsIndex extends React.Component {
     if (!this.props.checkins) {
       return null;
     }
-    let checkins = this.findTopTenCheckins();
+    const checkins = this.findTopTenCheckins();
 
     return (
       <div className="checkins-wrapper">
         <h1>Checkins</h1>
-
         <ul>
           {
             checkins.map( checkin => (

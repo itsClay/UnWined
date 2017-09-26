@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link , Route, withRouter } from 'react-router-dom';
+import CheckinsIndexItem from '../checkins/checkins_index_item';
 
 class WinesShow extends React.Component {
   constructor(props) {
@@ -7,12 +8,13 @@ class WinesShow extends React.Component {
     this.state = {
       //..
     };
-    console.log(this.props);
+    // console.log(this.props);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchWine(this.props.match.params.wineId);
+    console.log("my props in show", this.props);
   }
 
   // leaving functionality in for future use - currently
@@ -26,8 +28,19 @@ class WinesShow extends React.Component {
   }
 
   render(){
-    const wine = this.props.wines[this.props.match.params.wineId];
-    console.log(wine);
+    const wine = this.props.wine || { vineyard: "",
+                 wine_type: "",
+                 location: "",
+                 year: 2017,
+                 checkins: [],
+                 img_url: "",
+               };
+    const checkins = Object.keys(this.props.checkins).map(
+      (checkinKey) => this.props.checkins[checkinKey]
+    );
+    console.log(checkins);
+
+    console.log("my wine in render", this.props);
     return(
       <div className="wines-container">
         <div className="wine-idx-container">
@@ -53,8 +66,17 @@ class WinesShow extends React.Component {
                 </div>
               </Link>
             </div>
-            <div className="reviews wine-show-header">
-              <h1>Reviews Go Here... </h1>
+            <div className="checkins wine-show-header">
+              <h1>Checkins Go Here... </h1>
+            </div>
+            <div className="checkin-index">
+              <ul>
+                {
+                  checkins.map( checkin => (
+                    <CheckinsIndexItem checkin={checkin} />
+                  ))
+                }
+              </ul>
             </div>
           </div>
         </div>

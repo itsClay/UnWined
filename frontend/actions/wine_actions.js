@@ -10,9 +10,10 @@ const receiveAllWines = wines => ({
   wines
 });
 
-const receiveWine = wine => ({
+const receiveWine = ({wine, checkins}) => ({
   type: RECEIVE_WINE,
-  wine
+  wine,
+  checkins
 });
 
 const removeWine = wine => ({

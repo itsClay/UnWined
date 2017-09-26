@@ -10,7 +10,7 @@ const DEFAULT_STATE = {
     wine_type: "Cabernet Sauvignon",
     location: "Napa, CA",
     year: 2017,
-    reviews: [1, 3, 5],
+    checkins: [1, 3, 5],
     img_url: "http://s3.amazonaws.com/mscwordpresscontent/top100/wp-content/uploads/2016/11/Bottle_6834173.png",
   }
 };
