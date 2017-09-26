@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link , Route, withRouter } from 'react-router-dom';
-import CheckinsIndexItem from '../checkins/checkins_index_item';
+import React from "react";
+import { Link, Route, withRouter } from "react-router-dom";
+import CheckinsIndexItem from "../checkins/checkins_index_item";
 
 class WinesShow extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class WinesShow extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchWine(this.props.match.params.wineId);
     console.log("my props in show", this.props);
   }
@@ -24,24 +24,25 @@ class WinesShow extends React.Component {
   }
 
   addDefaultSrc(e) {
-    e.target.src = 'http://res.cloudinary.com/do2rg2v7p/image/upload/v1506207089/default_glass_vehnqt.jpg';
+    e.target.src =
+      "http://res.cloudinary.com/do2rg2v7p/image/upload/v1506207089/default_glass_vehnqt.jpg";
   }
 
-  render(){
-    const wine = this.props.wine || { vineyard: "",
-                 wine_type: "",
-                 location: "",
-                 year: 2017,
-                 checkins: [],
-                 img_url: "",
-               };
+  render() {
+    const wine = this.props.wine || {
+      vineyard: "",
+      wine_type: "",
+      location: "",
+      year: 2017,
+      checkins: [],
+      img_url: ""
+    };
     const checkins = Object.keys(this.props.checkins).map(
-      (checkinKey) => this.props.checkins[checkinKey]
+      checkinKey => this.props.checkins[checkinKey]
     );
-    console.log(checkins);
 
     console.log("my wine in render", this.props);
-    return(
+    return (
       <div className="wines-container">
         <div className="wine-idx-container">
           <div className="wine-show">
@@ -54,7 +55,8 @@ class WinesShow extends React.Component {
                 <img
                   onError={this.addDefaultSrc}
                   src={wine.img_url}
-                  alt={wine.wine_type}></img>
+                  alt={wine.wine_type}
+                />
               </div>
               <div className="wine-item-details">
                 <span>{wine.location}</span>
@@ -71,11 +73,12 @@ class WinesShow extends React.Component {
             </div>
             <div className="checkin-index">
               <ul>
-                {
-                  checkins.map( checkin => (
-                    <CheckinsIndexItem checkin={checkin} />
-                  ))
-                }
+                {checkins.map(checkin => (
+                  <CheckinsIndexItem
+                    key={`checkin-${checkin.id}`}
+                    checkin={checkin}
+                  />
+                ))}
               </ul>
             </div>
           </div>

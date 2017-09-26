@@ -49,7 +49,7 @@ export const createCheckin = (checkin) => dispatch => {
 };
 
 export const updateCheckin = (checkin) => dispatch => {
-  return APIUtil.updateWine( checkin ).then(
+  return APIUtil.updateCheckin( checkin ).then(
     checkinResp => dispatch(receiveCheckin( checkinResp )),
     errors => dispatch(receiveCheckinErrors( errors.responseJSON ))
   );

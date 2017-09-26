@@ -21,9 +21,10 @@ export const createCheckin = (checkin) => {
 };
 
 export const updateCheckin = (checkin) => {
+  console.log(checkin);
   return $.ajax({
     method: 'PATCH',
-    url: `api/checkin/${checkin.id}`,
+    url: `api/checkins/${checkin.id}`,
     data: { checkin }
   });
 };

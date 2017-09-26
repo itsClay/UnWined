@@ -19,6 +19,13 @@ class CheckinsFormModal extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillMount() {
+    if(this.props.formType === 'edit') {
+      this.setState( this.props.checkinToChange );
+
+    }
+  }
+
   closeModal() {
     this.setState({ modalOpen: false });
   }
@@ -36,11 +43,14 @@ class CheckinsFormModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
-    this.props.createCheckin({rating:`${this.state.rating}`,
-                              comment:`${this.state.comment}`,
-                              wine_id: this.props.wine.id,
-                              user_id: this.props.currentUser.id })
+    console.log("Props: ",this.props);
+    let action = (this.props.formType === 'edit') ? this.props.updateCheckin : this.props.createCheckin;
+    console.log("action should be this: ", action);
+    action({id: this.props.checkin.id,
+            rating:`${this.state.rating}`,
+            comment:`${this.state.comment}`,
+            wine_id: this.props.wine.id,
+            user_id: this.props.currentUser.id })
       .then( () => this.closeModal() );
   }
 

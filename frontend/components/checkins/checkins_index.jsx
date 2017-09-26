@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link, withRoute } from 'react-router-dom';
-import { ProtectedRoute } from '../../util/route_util';
-import CheckinsIndexItem from './checkins_index_item';
-import orderBy from 'lodash.orderby';
+import React from "react";
+import { Link, withRoute } from "react-router-dom";
+import { ProtectedRoute } from "../../util/route_util";
+import CheckinsIndexItem from "./checkins_index_item";
+import orderBy from "lodash.orderby";
 
 class CheckinsIndex extends React.Component {
   constructor(props) {
@@ -14,9 +14,11 @@ class CheckinsIndex extends React.Component {
   }
 
   findTopTenCheckins() {
-    const arr = orderBy(Object.values(this.props.checkins),
-                                      ['created_at'],
-                                      ['desc']);
+    const arr = orderBy(
+      Object.values(this.props.checkins),
+      ["created_at"],
+      ["desc"]
+    );
     return arr.slice(0, 10);
   }
 
@@ -28,16 +30,14 @@ class CheckinsIndex extends React.Component {
 
     return (
       <div className="checkins-wrapper">
-        <h1>Checkins</h1>
+        <h1>Recent Checkins</h1>
         <ul>
-          {
-            checkins.map( checkin => (
-              <CheckinsIndexItem
-                key={`checkin-${checkin.id}`}
-                checkin={ checkin }
-              />
-            ))
-          }
+          {checkins.map(checkin => (
+            <CheckinsIndexItem
+              key={`checkin-${checkin.id}`}
+              checkin={checkin}
+            />
+          ))}
         </ul>
       </div>
     );

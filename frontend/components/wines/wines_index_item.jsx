@@ -49,7 +49,7 @@ const WinesIndexItem = ({ wine }) => {
       </div>
 
       <div className="review input-btn">
-        <CheckinsFormContainer wine={ wine }/>
+        <CheckinsFormContainer formType="new" wine={ wine }/>
       </div>
     </div>
   );
