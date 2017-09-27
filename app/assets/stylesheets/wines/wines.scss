@@ -49,6 +49,8 @@
   text-decoration: none;
 }
 .wine-item-img {
+  display: flex;
+  justify-content: center;
   max-height: 100px;
   overflow: hidden;
   width: 100px;
