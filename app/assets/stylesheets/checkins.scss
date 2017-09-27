@@ -1,0 +1,72 @@
+@import "./colors.scss";
+
+.checkin-wrapper {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid $grey-border;
+  width: 100%;
+  font-family: $font-robo;
+  margin-top: 20px;
+}
+.checkin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  width: 700px;
+  padding: 12px;
+}
+
+.checkin-header {
+  display: flex;
+  font-size: 22px;
+  font-weight: 700;
+  padding-bottom: 28px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-bottom: 1px solid $grey-border;
+}
+
+.checkin-content {
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $grey-border;
+  padding-bottom: 28px;
+  margin-bottom: 20px;
+  h1 {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+}
+
+.checkin-comment {
+  position: relative;
+  width: 80%;
+  border: 1px solid $grey-border;
+  border-radius: 4px;
+  padding: 8px;
+}
+.checkin-comment::before {
+  position: absolute;
+  // border: 1px solid $grey-border;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid $grey-border;
+  content: "";
+  width: 0;
+  height: 0;
+  bottom: 100%;
+  left: 24px;
+}
+.checkin-comment::after {
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid white;
+  content: "";
+  top: -18px;
+  left: 24px;
+}

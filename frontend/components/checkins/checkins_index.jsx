@@ -29,16 +29,22 @@ class CheckinsIndex extends React.Component {
     const checkins = this.findTopTenCheckins();
 
     return (
-      <div className="checkins-wrapper">
-        <h1>Recent Checkins</h1>
-        <ul>
-          {checkins.map(checkin => (
-            <CheckinsIndexItem
-              key={`checkin-${checkin.id}`}
-              checkin={checkin}
-            />
-          ))}
-        </ul>
+      <div className="checkin-wrapper">
+        <div className="checkin-container">
+          <div className="checkin-header">
+            <span>Recent Global Activity</span>
+          </div>
+          <div className="checkin-content">
+
+              {checkins.map(checkin => (
+                <CheckinsIndexItem
+                  key={`checkin-${checkin.id}`}
+                  checkin={checkin}
+                />
+              ))}
+
+          </div>
+        </div>
       </div>
     );
   }

@@ -35,7 +35,6 @@ class CheckinsFormModal extends React.Component {
   }
 
   update(field) {
-    console.log(this.props);
     return (e) => {
       this.setState( { [field]: e.target.value } );
     };
@@ -43,9 +42,7 @@ class CheckinsFormModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("Props: ",this.props);
     let action = (this.props.formType === 'edit') ? this.props.updateCheckin : this.props.createCheckin;
-    console.log("action should be this: ", action);
     action({id: this.props.checkin.id,
             rating:`${this.state.rating}`,
             comment:`${this.state.comment}`,
@@ -65,8 +62,6 @@ class CheckinsFormModal extends React.Component {
   }
 
   render() {
-    console.log('props: ', this.props);
-    console.log('state: ', this.state);
     return(
       <div>
         <button onClick={this.openModal}>Check-in</button>

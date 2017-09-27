@@ -17,7 +17,6 @@ class WinesForm extends React.Component {
   }
 
   update(field) {
-    console.log(this.props);
     return (e) => {
       this.setState( { [field]: e.target.value } );
     };
@@ -25,7 +24,6 @@ class WinesForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
     this.props.action(this.state).then(
       () => {
         if(this.props.wine.id !== undefined) {

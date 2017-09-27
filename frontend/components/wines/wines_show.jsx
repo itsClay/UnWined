@@ -5,16 +5,11 @@ import CheckinsIndexItem from "../checkins/checkins_index_item";
 class WinesShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      //..
-    };
-    // console.log(this.props);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchWine(this.props.match.params.wineId);
-    console.log("my props in show", this.props);
   }
 
   // leaving functionality in for future use - currently
@@ -41,7 +36,6 @@ class WinesShow extends React.Component {
       checkinKey => this.props.checkins[checkinKey]
     );
 
-    console.log("my wine in render", this.props);
     return (
       <div className="wines-container">
         <div className="wine-idx-container">
