@@ -27,16 +27,20 @@
   margin-right: 20px;
   margin-top: 20px;
   padding-bottom: 15px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $grey-border;
   align-items: center;
   justify-content: space-between;
+  span {
+    font-size: 22px;
+    font-weight: 700;
+  }
 }
 .wine-index-item {
   margin: 12px 20px 0px 20px;
   padding-bottom: 12px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $grey-border;
   &:last-child {
     border-bottom: 0;
   }
@@ -131,9 +135,12 @@
   font-size: 29px;
   margin: 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $grey-border;
   span {
     margin-left: 10px;
+  }
+  h3 {
+    font-size: 18px;
   }
 }
 .wine-show-body {
@@ -146,16 +153,46 @@
   align-items:flex-start;
 
   button {
-    height: 25px;
+    height: 28px;
+    min-width: 50px;
     background-color: $dark-purple;
     color: white;
     border: 0;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 3px;
     padding-left: 10px;
     padding-right: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
   }
-  :hover {
+}
+.input-btn button:hover {
     background-color: $light-purple;
+    border-radius: 3px;
   }
+
+.light-purple button {
+  background-color: transparent;
+  border: 2px solid $dark-purple;
+  color: $dark-purple;
+}
+.light-purple button:hover {
+  background-color: $dark-purple;
+  color: white;
+}
+
+.user-checkin {
+  margin-left: 12px;
+}
+.right-align {
+  // position: ;
+  // left: 91%;
+  // top: 5px;
+}
+
+.right-align .align-btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 20px;
 }

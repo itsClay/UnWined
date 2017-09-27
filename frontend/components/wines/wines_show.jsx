@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Route, withRouter } from "react-router-dom";
 import CheckinsIndexItem from "../checkins/checkins_index_item";
+import CheckinsFormContainer from '../checkins/checkins_form_container';
 
 class WinesShow extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class WinesShow extends React.Component {
               <span>{wine.wine_type}</span>
             </div>
             <div className="wine-show-body">
-              <div className="wine-item-img">
+              <div className="wine-index-item">
                 <img
                   onError={this.addDefaultSrc}
                   src={wine.img_url}
@@ -56,24 +57,36 @@ class WinesShow extends React.Component {
                 <span>{wine.location}</span>
                 <span>{wine.year}</span>
               </div>
-              <Link to={`/wines/${wine.id}/edit`}>
-                <div className="input-btn">
-                  <button>Edit Wine</button>
+
+              <div>
+                <Link to={`/wines/${wine.id}/edit`}>
+                  <div className="input-btn">
+                    <button>Edit Wine</button>
+                  </div>
+                </Link>
+                <div className="right-align input-btn">
+                  <CheckinsFormContainer formType="new" wine={ wine }/>
                 </div>
-              </Link>
+              </div>
+
             </div>
-            <div className="checkins wine-show-header">
-              <h1>Checkins Go Here... </h1>
-            </div>
-            <div className="checkin-index">
-              <ul>
-                {checkins.map(checkin => (
-                  <CheckinsIndexItem
-                    key={`checkin-${checkin.id}`}
-                    checkin={checkin}
-                  />
-                ))}
-              </ul>
+
+            <div className="checkin-wrapper">
+              <div className="checkin-container">
+                <div className="wine-show-header">
+                  <h3>Who's having this wine?</h3>
+                </div>
+                <div className="checkin-content">
+                    {
+                      checkins.map(checkin => (
+                      <div key={`checkin-${checkin.id}`} className="user-checkin">
+                        <CheckinsIndexItem
+                          key={`checkin-${checkin.id}`}
+                          checkin={checkin} />
+                      </div>
+                    ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

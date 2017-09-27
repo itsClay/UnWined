@@ -21,13 +21,14 @@
   display: flex;
   font-size: 22px;
   font-weight: 700;
-  padding-bottom: 28px;
+  padding-bottom: 15px;
   margin-bottom: 20px;
   margin-top: 20px;
   border-bottom: 1px solid $grey-border;
 }
 
 .checkin-content {
+  //...
 }
 
 .item {
@@ -41,7 +42,11 @@
     margin-bottom: 28px;
   }
 }
-
+.comment {
+  display: flex;
+  align-items: center;
+  margin: 12px 0px 12px 12px;
+}
 .checkin-comment {
   position: relative;
   width: 80%;
@@ -69,4 +74,7 @@
   content: "";
   top: -18px;
   left: 24px;
+}
+.review {
+  margin-top: 12px;
 }

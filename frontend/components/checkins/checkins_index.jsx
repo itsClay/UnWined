@@ -37,10 +37,11 @@ class CheckinsIndex extends React.Component {
           <div className="checkin-content">
 
               {checkins.map(checkin => (
-                <CheckinsIndexItem
-                  key={`checkin-${checkin.id}`}
-                  checkin={checkin}
-                />
+                <div key={`checkin-${checkin.id}`} className="user-checkin">
+                  <CheckinsIndexItem
+                    checkin={checkin}
+                  />
+                </div>
               ))}
 
           </div>

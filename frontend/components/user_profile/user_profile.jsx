@@ -15,22 +15,34 @@ class UserProfile extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>User Profile</h1>
-        <ul>
-          {
-            this.props.checkins.map( (checkin) => (
-              <div>
-                <CheckinsIndexItem
-                  key={`checkin-${checkin.id}`}
-                  checkin={checkin}
-                />
-              <CheckinsFormContainer formType="edit" checkinToChange={checkin} wine={ checkin.wine }/>
-              </div>
-            ))
-          }
-        </ul>
+      <div className="checkin-wrapper">
+        <div className="checkin-container">
+          <div className="checkin-header">
+            <span>Your recent Checkins</span>
+          </div>
+          <div className="checkin-content">
+            {
+              this.props.checkins.map( (checkin) => (
+                <div key={`checkin-${checkin.id}`} className="user-checkin">
+                  <div className="right-align input-btn">
+                    <CheckinsFormContainer
+                      formType="edit"
+                      checkinToChange={checkin}
+                      wine={ checkin.wine }
+                    />
+                  </div>
+                  <CheckinsIndexItem
+                    checkin={checkin}
+                  />
+                </div>
+              ))
+            }
+          </div>
+
+
+        </div>
       </div>
+
     );
   }
 }

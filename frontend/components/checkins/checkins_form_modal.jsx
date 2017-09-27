@@ -69,16 +69,16 @@ class CheckinsFormModal extends React.Component {
       left              : 0,
       right             : 0,
       bottom            : 0,
-      backgroundColor   : 'rgba(255, 255, 255, 0.75)'
+      backgroundColor   : 'rgba(0, 0, 0, 0.75)'
     },
     content : {
       position                   : 'absolute',
-      top                        : '40px',
-      left                       : '40px',
-      right                      : '40px',
-      bottom                     : '40px',
+      top                        : '33%',
+      left                       : '33%',
+      right                      : 'auto',
+      bottom                     : 'auto',
       border                     : '1px solid #ccc',
-      background                 : '#fff',
+      background                 : '#B1ACD0',
       overflow                   : 'auto',
       WebkitOverflowScrolling    : 'touch',
       borderRadius               : '4px',
@@ -89,35 +89,50 @@ class CheckinsFormModal extends React.Component {
     };
   }
 
+  renderButtonStyle(){
+    console.log(this.props);
+    let buttonText = "Check-in";
+    if (this.props.formType === 'edit') {
+      buttonText = "Edit";
+    }
+    return buttonText;
+  }
+
   render() {
     return(
-      <div>
-        <button onClick={this.openModal}>Check-in</button>
+      <div className="align-btn">
+        <button onClick={this.openModal}>{this.renderButtonStyle()}</button>
 
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
           contentLabel="wine-rating"
           style={ this.modalStyle() }>
-
-            <h2>Checkin!</h2>
-            <form onSubmit={this.handleSubmit}>
-              <label>Rate it!</label>
-              <Rating
-                empty="fa fa-star-o fa-2x"
-                full="fa fa-star fa-2x"
-                onChange={ (rating) => this.setState({rating: rating}) }
-                value={this.state.rating}
-              />
-              <div className="comment">
-                <label>Comment</label>
-                <textarea
-                  onChange={this.update('comment')}
-                  value={this.state.comment}>
-                </textarea>
+            <div className="modal-wrapper">
+              <div className="header">
+                <h2>How was the {this.props.wine.wine_type}?</h2>
               </div>
-              <button type="submit">Submit</button>
-            </form>
+              <form onSubmit={this.handleSubmit}>
+                <Rating
+                  empty="fa fa-star-o fa-2x"
+                  full="fa fa-star fa-2x"
+                  onChange={ (rating) => this.setState({rating: rating}) }
+                  initialRate={this.state.rating}
+                />
+                <div>
+                  <textarea
+                    onChange={this.update('comment')}
+                    value={this.state.comment}
+                    >
+                  </textarea>
+                </div>
+                <div className="input-btn">
+                  <button
+                    type="submit"
+                  >Submit</button>
+                </div>
+              </form>
+            </div>
         </Modal>
       </div>
     );
