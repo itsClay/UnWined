@@ -73,8 +73,8 @@ class CheckinsFormModal extends React.Component {
     },
     content : {
       position                   : 'absolute',
-      top                        : '33%',
-      left                       : '33%',
+      top                        : '25%',
+      left                       : '25%',
       right                      : 'auto',
       bottom                     : 'auto',
       border                     : '1px solid #ccc',
@@ -122,6 +122,8 @@ class CheckinsFormModal extends React.Component {
                   <textarea
                     onChange={this.update('comment')}
                     value={this.state.comment}
+                    rows="7"
+                    cols="33"
                     >
                   </textarea>
                 </div>
