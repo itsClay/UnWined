@@ -17,6 +17,9 @@ const CheckinsIndexItem = ({ checkin }) => {
           full="fa fa-star fa-2x"
           initialRate={checkin.rating}
           readonly/>
+        <div className="created-at">
+          { checkin.created_at } ago
+        </div>
       </div>
     </div>
   );
