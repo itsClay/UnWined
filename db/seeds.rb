@@ -8,6 +8,10 @@
 
 User.destroy_all
 user1 = User.create!(username: 'Guest', password: '123456')
+user2 = User.create!(username: 'AngryUser', password: 'password')
+user3 = User.create!(username: 'HappyUser', password: 'password')
+user4 = User.create!(username: 'NeutralUser', password: 'password')
+
 
 Wine.destroy_all
 wine1 = Wine.create!(vineyard: 'Cline', wine_type: 'zinfandel', location: 'Sonoma, Ca', year: 2016, img_url: "https://www.reversewinesnob.com/wp-content/uploads/2016/03/cline-lodi-zinfandel-150x150.jpg")
@@ -18,3 +22,15 @@ wine5 = Wine.create!(vineyard: 'Cupcake', wine_type: 'Chardonnay', location: 'Na
 wine6 = Wine.create!(vineyard: 'Cupcake', wine_type: 'Pinot Grigio', location: 'Napa, Ca', year: 2017, img_url: "https://dsi2vjvztwiuk.cloudfront.net/website/products/96032/bottle/751538/square.png")
 wine7 = Wine.create!(vineyard: 'Cupcake', wine_type: 'Zinfandel', location: 'Napa, Ca', year: 2012, img_url: "https://wine-searcher1.freetls.fastly.net/images/labels/66/02/cupcake-vineyards-zinfandel-lodi-usa-10496602.jpg")
 wine8 = Wine.create!(vineyard: 'Cupcake', wine_type: 'Rose', location: 'Napa, Ca', year: 2015, img_url: "https://www.cupcakevineyards.com/wp-content/uploads/2017/03/explore-rose.png")
+
+
+
+Checkin.destroy_all
+checkin1 = Checkin.create!(rating: 5, comment: "Dilectable", wine_id: wine2.id, user_id: user1.id)
+checkin1 = Checkin.create!(rating: 4, comment: "Very good with my favorite cheese", wine_id: wine3.id, user_id: user2.id)
+checkin1 = Checkin.create!(rating: 3, comment: "It was ok", wine_id: wine4.id, user_id: user3.id)
+checkin1 = Checkin.create!(rating: 2, comment: "Not a fan one bit", wine_id: wine3.id, user_id: user4.id)
+checkin1 = Checkin.create!(rating: 1, comment: "Just Nope", wine_id: wine2.id, user_id: user2.id)
+checkin1 = Checkin.create!(rating: 4, comment: "Top 10 for sure!", wine_id: wine1.id, user_id: user3.id)
+checkin1 = Checkin.create!(rating: 3, comment: "Meh", wine_id: wine2.id, user_id: user1.id)
+checkin1 = Checkin.create!(rating: 5, comment: "The best out there", wine_id: wine7.id, user_id: user4.id)

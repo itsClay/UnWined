@@ -14,13 +14,13 @@ class WinesIndex extends React.Component {
   }
 
   render() {
-    let wines = this.props.wines;
+    const wines = this.props.wines;
     return (
       <div className="wines-container">
 
         <div className="wine-idx-container">
           <div className="wine-idx-header">
-            <h1>Wines</h1>
+            <h1>Wines <i className="fa fa-address-book" aria-hidden="true"></i></h1>
             <Link to="/wines/new">
               <div className="input-btn">
                 <button>Make a Wine</button>
