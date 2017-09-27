@@ -13,6 +13,33 @@ class UserProfile extends React.Component {
     this.props.fetchCheckins();
   }
 
+  renderCheckinsOrNiceMessage() {
+    if (this.props.checkins.length === 0) {
+      return (
+        <div className="checkin-filler">
+          <h1>You have no reviews yet!</h1>
+        </div>
+      );
+    } else {
+      return (
+        this.props.checkins.map( (checkin) => (
+          <div key={`checkin-${checkin.id}`} className="user-checkin">
+            <div className="right-align input-btn">
+              <CheckinsFormContainer
+                formType="edit"
+                checkinToChange={checkin}
+                wine={ checkin.wine }
+              />
+            </div>
+            <CheckinsIndexItem
+              checkin={checkin}
+            />
+          </div>
+        )).reverse()
+      );
+    }
+  }
+
   render() {
     return (
       <div className="checkin-wrapper">
@@ -22,24 +49,9 @@ class UserProfile extends React.Component {
           </div>
           <div className="checkin-content">
             {
-              this.props.checkins.map( (checkin) => (
-                <div key={`checkin-${checkin.id}`} className="user-checkin">
-                  <div className="right-align input-btn">
-                    <CheckinsFormContainer
-                      formType="edit"
-                      checkinToChange={checkin}
-                      wine={ checkin.wine }
-                    />
-                  </div>
-                  <CheckinsIndexItem
-                    checkin={checkin}
-                  />
-                </div>
-              )).reverse()
+              this.renderCheckinsOrNiceMessage()
             }
           </div>
-
-
         </div>
       </div>
 

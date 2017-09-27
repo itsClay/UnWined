@@ -16,7 +16,6 @@
   width: 700px;
   padding: 12px;
 }
-
 .checkin-header {
   display: flex;
   font-size: 22px;
@@ -26,11 +25,9 @@
   margin-top: 20px;
   border-bottom: 1px solid $grey-border;
 }
-
 .checkin-content {
   //...
 }
-
 .item {
   display: flex;
   flex-direction: column;
@@ -78,8 +75,12 @@
 .review {
   margin-top: 12px;
 }
-
 .created-at {
   margin: 12px 5px;
   font-size: 12px;
+}
+.checkin-filler {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
 }

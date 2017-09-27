@@ -72,7 +72,7 @@ users = [ user1,
           user6,
           user7 ]
 
-          Checkin.destroy_all
+Checkin.destroy_all
 25.times do
   Checkin.create!(rating: rand(1..5),
                   comment: comments[rand(0..13)],
