@@ -90,7 +90,6 @@ class CheckinsFormModal extends React.Component {
   }
 
   renderButtonStyle(){
-    console.log(this.props);
     let buttonText = "Check-in";
     if (this.props.formType === 'edit') {
       buttonText = "Edit";

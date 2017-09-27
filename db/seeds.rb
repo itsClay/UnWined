@@ -80,11 +80,3 @@ users = [ user1,
                   user_id: users[rand(0..6)].id)
 
 end
-# checkin1 = Checkin.create!(rating: 5, comment: "Dilectable", wine_id: wine2.id, user_id: user1.id)
-# checkin1 = Checkin.create!(rating: 4, comment: "Very good with my favorite cheese", wine_id: wine3.id, user_id: user2.id)
-# checkin1 = Checkin.create!(rating: 3, comment: "It was ok", wine_id: wine4.id, user_id: user3.id)
-# checkin1 = Checkin.create!(rating: 2, comment: "Not a fan one bit", wine_id: wine3.id, user_id: user4.id)
-# checkin1 = Checkin.create!(rating: 1, comment: "Just Nope", wine_id: wine2.id, user_id: user2.id)
-# checkin1 = Checkin.create!(rating: 4, comment: "Top 10 for sure!", wine_id: wine1.id, user_id: user3.id)
-# checkin1 = Checkin.create!(rating: 3, comment: "Meh", wine_id: wine2.id, user_id: user1.id)
-# checkin1 = Checkin.create!(rating: 5, comment: "The best out there", wine_id: wine7.id, user_id: user4.id)
