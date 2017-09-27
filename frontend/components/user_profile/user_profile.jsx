@@ -35,7 +35,7 @@ class UserProfile extends React.Component {
                     checkin={checkin}
                   />
                 </div>
-              ))
+              )).reverse()
             }
           </div>
 

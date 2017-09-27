@@ -7,7 +7,6 @@
   font-family: $font-robo;
   background-color: $bg-sand;
   height: 100%;
-  // flex-direction: column;
 }
 .wine-idx-container {
   display: flex;
@@ -54,9 +53,6 @@
   max-height: 100px;
   overflow: hidden;
   width: 100px;
-  // img {
-  //   object-fit: cover;
-  // }
 }
 .wine-index-item img {
   height: 100px;
@@ -74,9 +70,11 @@
   display: flex;
   justify-content: space-between;
   font-size: 22px;
+  span i {
+    margin-left: 5px
+  }
 }
 .wine-item-title span {
-  margin-left: 15px;
   :first-child span:first-child span {
     margin-left: 7px;
   }
