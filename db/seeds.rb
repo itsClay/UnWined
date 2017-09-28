@@ -32,6 +32,17 @@ wine12 = Wine.create!(vineyard: 'V. Sattui', wine_type: 'Dry Riesling', location
 wine13 = Wine.create!(vineyard: 'V. Sattui', wine_type: 'Petite Sirah', location: 'Napa, Ca', year: 2013, img_url: "http://enofylzwineblog.com/wp-content/uploads/2013/01/V-Sattui-Trio.jpg")
 wine14 = Wine.create!(vineyard: 'Fetzer', wine_type: 'Chardonnay', location: 'Napa, Ca', year: 2017, img_url: "http://www.totalwine.com/media/sys_master/twmmedia/h46/hc4/8820190412830.png")
 wine15 = Wine.create!(vineyard: 'Ponzi', wine_type: 'Pinto Gris', location: 'Willamette Valley', year: 2013, img_url: "https://www.wespeakwine.com/resize/Shared/Images/Product/Ponzi-Vineyards-Pinot-Gris-Willamette-Valley-2014-750ML/ponzi_pg_bottle.jpg?bw=600&bh=600")
+wine16 = Wine.create!(vineyard: 'Jacuzzi', wine_type: 'Sagrantino', location: 'Napa, CA', year: 2010, img_url: "http://cravelocal.com/wp-content/uploads/2013/07/Jacuzzi-Sagrantino-Wine-review.jpg")
+wine17 = Wine.create!(vineyard: 'Cline', wine_type: 'Syrah', location: 'Sonoma, CA', year: 2010, img_url: "http://cravelocal.com/wp-content/uploads/2013/07/Cline-los-carneros-Syrah-wine-review.jpg")
+wine18 = Wine.create!(vineyard: 'Jacuzzi', wine_type: 'Barbera', location: 'Mendocino County', year: 2013, img_url: "https://i.pinimg.com/originals/06/2b/1e/062b1efd36e53b1a026ce4e70f2ac365.jpg")
+wine19 = Wine.create!(vineyard: 'Jacuzzi', wine_type: 'Nero D\'Avola', location: 'Tracy Valley', year: 2009, img_url: "https://s3.amazonaws.com/thewinespies-production/uploads/product/image/1576-526c9b43bf76492a09c25c5b2cf645bf61b189a1/tall_product_photo.jpg")
+wine20 = Wine.create!(vineyard: 'Jacuzzi', wine_type: 'Arneis', location: 'Paicines', year: 2014, img_url: "http://cdn.ct-static.com/labels/1041969.jpg")
+wine21 = Wine.create!(vineyard: 'Justin', wine_type: 'Isosceles', location: 'Paso Robles', year: 2014, img_url: "https://www.justinwine.com/content/dam/justin/home/Justin_2014_750ml_Isosceles_rgb.jpg")
+wine22 = Wine.create!(vineyard: 'Justin', wine_type: 'Cabernet Sauvignon', location: 'Paso Robles', year: 2011, img_url: "https://www.justinwine.com/content/dam/justin/club/cabernet-198x800.png")
+wine23 = Wine.create!(vineyard: 'Justin', wine_type: 'Obtuse', location: 'Paso Robles', year: 2011, img_url: "https://cdn.minibardelivery.com/products/150624/product/Justin_201.jpg?1478203869")
+
+
+
 
 wines = [ wine1,
           wine2,
@@ -47,22 +58,30 @@ wines = [ wine1,
           wine12,
           wine13,
           wine14,
-          wine15 ]
+          wine15,
+          wine16,
+          wine17,
+          wine18,
+          wine19,
+          wine20,
+          wine21,
+          wine22,
+          wine23 ]
 
 comments = [ "Dilectable",
-            "Very good with my favorite cheese",
-            "It was ok",
-            "Not a fan one bit",
-            "Just Nope",
-            "Top 10 for sure!",
-            "Meh",
-            "The best out there",
-            "It doesn't get much better than this.",
-            "What more can you ask for",
-            "Find tannens",
-            "Great legs, great color",
-            "Flavorful, goes great with fish",
-            "This is my go to with steak!" ]
+             "Very good with my favorite cheese",
+             "It was ok",
+             "Not a fan one bit",
+             "Just Nope",
+             "Top 10 for sure!",
+             "Meh",
+             "The best out there",
+             "It doesn't get much better than this.",
+             "What more can you ask for",
+             "Find tannens",
+             "Great legs, great color",
+             "Flavorful, goes great with fish",
+             "This is my go to with steak!" ]
 
 users = [ user1,
           user2,
@@ -73,7 +92,7 @@ users = [ user1,
           user7 ]
 
 Checkin.destroy_all
-50.times do
+60.times do
   Checkin.create!(rating: rand(1..5),
                   comment: comments[rand(0..13)],
                   wine_id: wines[rand(0..14)].id,
