@@ -12,39 +12,29 @@ class UserProfile extends React.Component {
   }
 
   componentStateSetup(currentPropsToChange){
-    
-  }
-  //we are calling this in 2 places because if a user navigates from
-  // one user show page to another we need to refetch
-  componentWillMount() {
-    if(this.props.match.path === '/profile') {
+    if(currentPropsToChange.match.path === '/profile') {
       this.props.fetchUser(this.props.currentUser.id).then(
         () => this.setState({loading: false})
       );
       this.setState({loading: true});
     } else {
-      this.props.fetchUser(this.props.match.params.userId).then(
+      this.props.fetchUser(currentPropsToChange.match.params.userId).then(
         () => this.setState({loading: false})
       );
       this.setState({loading: true});
     }
+  }
+  //we are calling this in 2 places because if a user navigates from
+  // one user show page to another we need to refetch
+  componentWillMount() {
+    this.componentStateSetup(this.props);
   }
 
   componentWillReceiveProps(newProps){
     if (this.props.match.path === newProps.match.path){
       return;
     }
-    if(newProps.match.path === '/profile') {
-      this.props.fetchUser(this.props.currentUser.id).then(
-        () => this.setState({loading: false})
-      );
-      this.setState({loading: true});
-    } else {
-      this.props.fetchUser(newProps.match.params.userId).then(
-        () => this.setState({loading: false})
-      );
-      this.setState({loading: true});
-    }
+    this.componentStateSetup(newProps);
   }
 
   renderCheckinsOrNiceMessage() {
