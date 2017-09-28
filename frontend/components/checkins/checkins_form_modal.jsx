@@ -73,8 +73,8 @@ class CheckinsFormModal extends React.Component {
     content : {
       position                   : 'absolute',
       top                        : '25%',
-      left                       : '25%',
-      right                      : 'auto',
+      left                       : '50%',
+      transform                  : 'translate(-50%, 0)',
       bottom                     : 'auto',
       border                     : '1px solid #ccc',
       background                 : '#B1ACD0',
