@@ -15,13 +15,15 @@ const mapStateToProps = (state, ownProps) => {
     // filtering below. if we fetch a different user we can rely upon
     // the api call to give us both the user info and the checkins.
   }
-  const checkins = Object.values(state.checkins).filter(
-    (checkin) => checkin.user_id === state.session.currentUser.id
-  );
+  const checkins = Object.values(state.checkins);
+  // .filter(
+  //   (checkin) => checkin.user_id === state.session.currentUser.id
+  // );
 
   return {
     currentUser: state.session.currentUser,
     checkins: checkins,
+    user: state.user
   };
 };
 

@@ -7,6 +7,7 @@ import {
   updateCheckin,
   deleteCheckin
 } from "../../actions/checkin_actions";
+import { fetchWine } from '../../actions/wine_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -21,10 +22,12 @@ const mapStateToProps = (state, ownProps) => {
   if(ownProps.checkinToChange) {
     checkin = ownProps.checkinToChange;
   }
+  let wine_id = checkin.wine_id;
 
   return {
     checkin: checkin,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    wine: ownProps.wine
   };
 };
 
@@ -37,6 +40,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     updateCheckin: checkin => dispatch(updateCheckin(checkin)),
     fetchCheckin: id => dispatch(fetchCheckin(id)),
     deleteCheckin: id => dispatch(deleteCheckin(id)),
+    fetchWine: id => dispatch(fetchWine(id)),
     action: checkin => dispatch(action(checkin))
   };
 };

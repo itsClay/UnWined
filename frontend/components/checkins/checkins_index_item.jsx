@@ -3,10 +3,12 @@ import Rating from 'react-rating';
 import { Link } from "react-router-dom";
 
 const CheckinsIndexItem = ({ checkin }) => {
+  console.log(checkin);
   return (
     <div className="item">
       <h1>
-        <Link to={`/users/${checkin.user.id}`}>{checkin.user.username}</Link> had the <Link to={`/wines/${checkin.wine.id}`}>{checkin.wine.wine_type}</Link> by {checkin.wine.vineyard}
+        <Link
+          to={`/users/${checkin.user_id}`}>{checkin.user.username}</Link> had the <Link to={`/wines/${checkin.wine.id}`}>{checkin.wine.wine_type}</Link> by {checkin.wine.vineyard}
       </h1>
       <div className="checkin-comment">
         <div className="comment">

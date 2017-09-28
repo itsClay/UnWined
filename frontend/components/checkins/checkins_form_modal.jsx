@@ -22,7 +22,6 @@ class CheckinsFormModal extends React.Component {
   componentWillMount() {
     if(this.props.formType === 'edit') {
       this.setState( this.props.checkinToChange );
-
     }
   }
 
@@ -98,6 +97,9 @@ class CheckinsFormModal extends React.Component {
   }
 
   render() {
+    if(!this.props.wine){
+      return null;
+    }
     return(
       <div className="align-btn">
         <button onClick={this.openModal}>{this.renderButtonStyle()}</button>

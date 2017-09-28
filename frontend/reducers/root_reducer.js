@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   errors: ErrorsReducer,
   wines: WinesReducer,
   checkins: CheckinsReducer,
-  users: UsersReducer
+  user: UsersReducer
 });
 
 export default rootReducer;
