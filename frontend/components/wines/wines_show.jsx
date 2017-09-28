@@ -46,7 +46,7 @@ class WinesShow extends React.Component {
               <span>{wine.wine_type}</span>
             </div>
             <div className="wine-show-body">
-              <div className="wine-index-item">
+              <div className="wine-item-img">
                 <img
                   onError={this.addDefaultSrc}
                   src={wine.img_url}

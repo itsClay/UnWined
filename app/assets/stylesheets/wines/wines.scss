@@ -48,15 +48,17 @@
   text-decoration: none;
 }
 .wine-item-img {
+  // margin-left: 12px;
   display: flex;
   justify-content: center;
-  max-height: 100px;
   overflow: hidden;
   width: 100px;
-}
-.wine-index-item img {
   height: 100px;
 }
+.wine-item-img img {
+  height: 100px;
+}
+
 .wine-item-details {
   display: flex;
   flex-direction: column;
