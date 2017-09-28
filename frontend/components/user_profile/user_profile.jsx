@@ -7,13 +7,20 @@ import { ProtectedRoute } from "../../util/route_util";
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {loading: null};
   }
 
   componentWillMount() {
-    this.props.fetchCheckins();
+    this.props.fetchCheckins().then( () => this.setState({loading: false}));
+    this.setState({loading: true});
   }
 
   renderCheckinsOrNiceMessage() {
+    if(this.state.loading) {
+      return (
+        <h1>...Loading</h1>
+      );
+    }
     if (this.props.checkins.length === 0) {
       return (
         <div className="checkin-filler">
