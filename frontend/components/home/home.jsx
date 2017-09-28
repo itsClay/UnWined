@@ -32,9 +32,9 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="right-nav">
-              <Link to="/profile" className="user-welcome">
+              <NavLink to="/profile" className="user-welcome">
                 Welcome, {this.currentUser.username}
-              </Link>
+              </NavLink>
               <button className="dash-logout" onClick={this.logout}>
                 Logout
               </button>
