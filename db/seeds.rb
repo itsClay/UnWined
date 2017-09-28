@@ -73,7 +73,7 @@ users = [ user1,
           user7 ]
 
 Checkin.destroy_all
-25.times do
+50.times do
   Checkin.create!(rating: rand(1..5),
                   comment: comments[rand(0..13)],
                   wine_id: wines[rand(0..14)].id,
