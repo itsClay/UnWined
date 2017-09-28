@@ -11,6 +11,10 @@ class UserProfile extends React.Component {
   }
 
   componentWillMount() {
+    console.log(this.props);
+    if(this.props.match.params === '/users/:userId') {
+      // this.props.receiveUser();
+    }
     this.props.fetchCheckins().then( () => this.setState({loading: false}));
     this.setState({loading: true});
   }

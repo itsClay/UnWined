@@ -3,7 +3,7 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
-const receiveUser = (currentUser) => ({
+export const receiveUser = (currentUser) => ({
   type: RECEIVE_USER,
   currentUser
 });

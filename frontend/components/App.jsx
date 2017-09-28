@@ -19,6 +19,7 @@ const App = () => (
       <ProtectedRoute exact path="/wines/:wineId" component={WinesShowContainer} />
       <ProtectedRoute exact path="/wines/:wineId/edit" component={WinesFormContainer} />
       <ProtectedRoute exact path="/feed" component={CheckinsIndexContainer} />
+      <ProtectedRoute exact path="/users/:userId" component={UserProfileContainer} />
       <ProtectedRoute exact path="/profile" component={UserProfileContainer} />
       <AuthRoute path="/" component={GreetingContainer} />
       <Route path="/" component={() => <Redirect to="/" />} />

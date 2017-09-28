@@ -6,7 +6,7 @@ const CheckinsIndexItem = ({ checkin }) => {
   return (
     <div className="item">
       <h1>
-        {checkin.user.username} had the <Link to={`/wines/${checkin.wine.id}`}>{checkin.wine.wine_type}</Link> by {checkin.wine.vineyard}
+        <Link to={`/users/${checkin.user.id}`}>{checkin.user.username}</Link> had the <Link to={`/wines/${checkin.wine.id}`}>{checkin.wine.wine_type}</Link> by {checkin.wine.vineyard}
       </h1>
       <div className="checkin-comment">
         <div className="comment">
