@@ -24,8 +24,7 @@ Users can add and edit their favorite or not so favorite wines. Alongside, they 
 Users may navigate to the Cellar to discover new wines or add a new wine to the database. If they decide they don't like their selected image or information provided, they may choose to edit that information on the wine show page.
 
 ### Authentication
-<img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1506704715/demo_login_dxbsif.png"/
-height="180" />
+<img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1506704715/demo_login_dxbsif.png" height="180" />
 
 Single layer authentication was created from scratch utilizing BCrypt modules and SecureRandom hashing for user sessions. Alongside a Guest login has been created for easy viewing.
 
