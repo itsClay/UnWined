@@ -20,7 +20,7 @@ class Api::CheckinsController < ApplicationController
 
   def update
     @checkin = Checkin.find(params[:id])
-    if @checkin.update(checkin_params)
+    if @checkin.update(checkin_params) && @checkin.user.username === current_user.username
       render :show
     else
       render json: @checkin.errors.full_messages, status: 422
