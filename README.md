@@ -24,7 +24,9 @@ Users can add and edit their favorite or not so favorite wines. Alongside, they 
 # Features
 
 ### Drinks
-Users may navigate to the Cellar to discover new wines or add a new wine to the database. If they decide they don't like their selected image or information provided, they may choose to edit that information on the wine show page.
+<img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1506722248/wine_create_demo_czvtdx.gif" />
+
+Users may navigate to the Cellar to discover new wines or add a new wine to the database. If they decide they don't like their selected image or information provided, they may choose to edit that information on the wine show page. Additional features include error handling and an image preview.
 
 ### Authentication
 <img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1506704715/demo_login_dxbsif.png" height="180" />
