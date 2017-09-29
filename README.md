@@ -30,7 +30,7 @@ Users may navigate to the Cellar to discover new wines or add a new wine to the 
 
 
 Making forms re-usable by passing in seperate actions based upon url params.
-```
+``` javascript
 let formType = "new";
 if (ownProps.match.path == "/wines/:wineId/edit") {
   wine = state.wines[ownProps.match.params.wineId];
