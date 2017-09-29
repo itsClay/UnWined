@@ -89,6 +89,7 @@ class WinesForm extends React.Component {
                       onChange={this.update('img_url')}/>
                 </div>
                 <div className="preview-image">
+                  <span>Image Preview:</span>
                   <div className="wine-item-img">
                     <img src={this.state.img_url} / >
                   </div>
