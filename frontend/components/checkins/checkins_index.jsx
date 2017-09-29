@@ -16,10 +16,10 @@ class CheckinsIndex extends React.Component {
   findTopTenCheckins() {
     const arr = orderBy(
       Object.values(this.props.checkins),
-      ["created_at"],
+      ["created_seconds"],
       ["desc"]
     );
-    return arr.slice(0, 10);
+    return arr.slice(0, 10).reverse();
   }
 
   render() {
@@ -36,14 +36,15 @@ class CheckinsIndex extends React.Component {
             <span>Recent Global Activity</span>
           </div>
           <div className="checkin-content">
-
-              {checkins.map(checkin => (
+              {
+                checkins.map(checkin => (
                 <div key={`checkin-${checkin.id}`} className="user-checkin">
                   <CheckinsIndexItem
                     checkin={checkin}
                   />
                 </div>
-              ))}
+              )).reverse()
+              }
 
           </div>
         </div>

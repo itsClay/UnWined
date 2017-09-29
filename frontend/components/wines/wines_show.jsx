@@ -84,7 +84,8 @@ class WinesShow extends React.Component {
                           key={`checkin-${checkin.id}`}
                           checkin={checkin} />
                       </div>
-                    ))}
+                    )).reverse()
+                    }
                 </div>
               </div>
             </div>
