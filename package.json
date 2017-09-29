@@ -1,5 +1,6 @@
 {
   "name": "UnWined",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -15,11 +16,8 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-devtools-extension": "^2.13.2",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2"
+    "webpack": "^3.6.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -29,7 +27,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "webpack": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -43,7 +42,9 @@
   },
   "homepage": "https://github.com/itsClay/UnWined#readme",
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.2"
+    "redux-devtools-extension": "^2.13.2",
+    "webpack-dev-server": "^2.8.2",
+    "redux-logger": "^3.0.6"
   },
   "engines": {
     "node": "4.1.1",
