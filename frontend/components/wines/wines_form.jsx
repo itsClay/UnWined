@@ -29,7 +29,7 @@ class WinesForm extends React.Component {
         return this.props.history.push(`/wines/${result.wine.id}`);
       }
     ).fail( (result) => {
-      return this.props.history.push('/wines');
+      this.renderErrors();
     });
   }
 
@@ -88,7 +88,11 @@ class WinesForm extends React.Component {
                       value={this.state.img_url}
                       onChange={this.update('img_url')}/>
                 </div>
-
+                <div className="preview-image">
+                  <div className="wine-item-img">
+                    <img src={this.state.img_url} / >
+                  </div>
+                </div>
                 <div className="form-submit-wrapper">
                   <Link to="/wines">
                     <div className="input-btn">

@@ -30,10 +30,6 @@ const WinesIndexItem = ({ wine }) => {
     }
   };
 
-  if(!wine.img_url) {
-    wine.img_url = 'http://res.cloudinary.com/do2rg2v7p/image/upload/v1506207089/default_glass_vehnqt.jpg';
-  }
-
   return (
     <div className="wine-index-item">
       <div className="wine-item-img">
