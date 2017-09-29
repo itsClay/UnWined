@@ -25,14 +25,12 @@ class WinesForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.action(this.state).then(
-      () => {
-        if(this.props.wine.id !== undefined) {
-          return this.props.history.push(
-            `/wines/${this.props.wine.id}`
-          );
-        }
+      (result) => {
+        return this.props.history.push(`/wines/${result.wine.id}`);
       }
-    );
+    ).fail( (result) => {
+      return this.props.history.push('/wines');
+    });
   }
 
   renderErrors() {
