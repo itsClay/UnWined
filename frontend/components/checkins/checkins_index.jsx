@@ -13,27 +13,26 @@ class CheckinsIndex extends React.Component {
     this.props.fetchCheckins();
   }
 
-  findTopTenCheckins() {
+  findTopTwentyCheckins() {
     const arr = orderBy(
       Object.values(this.props.checkins),
       ["created_seconds"],
       ["desc"]
     );
-    return arr.slice(0, 10).reverse();
+    return arr.slice(0, 20).reverse();
   }
 
   render() {
-    console.log(this.props);
     if (!this.props.checkins) {
       return null;
     }
-    const checkins = this.findTopTenCheckins();
+    const checkins = this.findTopTwentyCheckins();
 
     return (
       <div className="checkin-wrapper">
         <div className="checkin-container">
           <div className="checkin-header">
-            <span>Recent Global Activity</span>
+            <span>What people are drinking</span>
           </div>
           <div className="checkin-content">
               {

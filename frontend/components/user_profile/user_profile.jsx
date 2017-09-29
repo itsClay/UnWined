@@ -44,15 +44,12 @@ class UserProfile extends React.Component {
       );
     }
     if (this.props.checkins.length === 0) {
-      console.log("no checkins yet...");
       return (
         <div className="checkin-filler">
           <h1>You have no reviews yet!</h1>
         </div>
       );
     } else {
-      console.log("checkinrender#props: ", this.props);
-      console.log("", this.props.checkins);
       return (
 
         this.props.checkins.map( (checkin) => (
@@ -82,9 +79,8 @@ class UserProfile extends React.Component {
     if (this.props.match.path === '/profile') {
       userMessage = "Your recent Checkins";
     } else {
-      console.log(this.props);
       if(this.props.user){
-        userMessage = `${this.props.user.username}s recent Checkins`;
+        userMessage = `${this.props.user.username}'s recent Checkins`;
       }
     }
     return userMessage;

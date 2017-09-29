@@ -3,7 +3,6 @@ import Rating from 'react-rating';
 import { Link } from "react-router-dom";
 
 const CheckinsIndexItem = ({ checkin }) => {
-  console.log(checkin);
   return (
     <div className="item">
       <h1>

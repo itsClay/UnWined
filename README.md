@@ -16,6 +16,9 @@ Users can add and edit their favorite or not so favorite wines. Alongside, they 
 - Redux
 - Rails
 - jQuery - ajax
+- PostgreSQL
+- webpack
+- Cloudinary
 
 
 # Features
@@ -31,7 +34,7 @@ Single layer authentication was created from scratch utilizing BCrypt modules an
 ### Checkins
 <img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1506706713/user_checkin_demo_f0xaco.gif" />
 
-Users may check-in and rate the wines they are having. If they decide they want to change their rating or comment, they may navigate to their profile page and edit their check-ins. Alongside there is a feed available to users to view what other users are having. Currently users have the ability to see the 10 most recent check-ins. If they desire, they may navigate to other users to see what wines they have been having.
+Users may check-in and rate the wines they are having. If they decide they want to change their rating or comment, they may navigate to their profile page and edit their check-ins. Alongside there is a feed available to users to view what other users are having. Currently users have the ability to see the 20 most recent check-ins. If they desire, they may navigate to other users to see what wines they have been having.
 
 ### Database
 Database schema may be found in the [wiki](https://github.com/itsClay/UnWined/wiki/database-schema).

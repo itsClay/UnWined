@@ -1,4 +1,25 @@
 const path = require('path');
+const webpack = require('webpack');
+
+// PLUGINS
+const plugins = [];
+const devPlugins = [];
+const prodPlugins = [
+  new webpack.DeffinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  }),
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: true
+    }
+  })
+];
+
+plugins = plugins.concat(
+  process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
+);
 
 module.exports = {
   context: __dirname,
@@ -7,6 +28,7 @@ module.exports = {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'bundle.js'
   },
+
   resolve: {
     extensions: ['.js', '.jsx', '*']
   },
@@ -23,4 +45,5 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
+  plugins: plugins,
 };
