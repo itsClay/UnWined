@@ -3,8 +3,8 @@
 <a href="https://un-wined.herokuapp.com/">
   <img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1506057090/logo3_hglbdy.png" height="200" align="right" />
 </a>
-# Un-Wined
 
+# Un-Wined
 #### A social app for wine lovers
 <https://un-wined.herokuapp.com/>
 
@@ -25,7 +25,7 @@ Users may navigate to the Cellar to discover new wines or add a new wine to the 
 
 ### Authentication
 <img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1506704715/demo_login_dxbsif.png"/
-height="180">
+height="180" />
 
 Single layer authentication was created from scratch utilizing BCrypt modules and SecureRandom hashing for user sessions. Alongside a Guest login has been created for easy viewing.
 
