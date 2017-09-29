@@ -14,6 +14,11 @@ user4 = User.create!(username: 'NeutralUser', password: 'password')
 user5 = User.create!(username: 'WineCritic', password: 'password')
 user6 = User.create!(username: 'WineCriticWannabe', password: 'password')
 user7 = User.create!(username: 'RemainsAnonymous', password: 'password')
+user8 = User.create!(username: 'TastetheRainbow', password: 'password')
+user9 = User.create!(username: 'NoPalette', password: 'password')
+user10 = User.create!(username: 'CorksMcGee', password: 'password')
+user11 = User.create!(username: 'FlavaFlaav', password: 'password')
+user12 = User.create!(username: 'Chuck Norris', password: 'password')
 
 
 Wine.destroy_all
@@ -40,33 +45,34 @@ wine20 = Wine.create!(vineyard: 'Jacuzzi', wine_type: 'Arneis', location: 'Paici
 wine21 = Wine.create!(vineyard: 'Justin', wine_type: 'Isosceles', location: 'Paso Robles', year: 2014, img_url: "https://www.justinwine.com/content/dam/justin/home/Justin_2014_750ml_Isosceles_rgb.jpg")
 wine22 = Wine.create!(vineyard: 'Justin', wine_type: 'Cabernet Sauvignon', location: 'Paso Robles', year: 2011, img_url: "https://www.justinwine.com/content/dam/justin/club/cabernet-198x800.png")
 wine23 = Wine.create!(vineyard: 'Justin', wine_type: 'Obtuse', location: 'Paso Robles', year: 2011, img_url: "https://cdn.minibardelivery.com/products/150624/product/Justin_201.jpg?1478203869")
+wine24 = Wine.create!(vineyard: 'Charles Shaw', wine_type: 'Shiraz', location: 'CA', year: 2008, img_url: "https://aintfoundagoodtitleblog.files.wordpress.com/2010/12/charlesshawshiraz2008.jpg")
+wine25 = Wine.create!(vineyard: 'Charles Shaw', wine_type: 'Cabernet Sauvignon', location: 'CA', year: 2005, img_url: "https://tweedlibrarian.files.wordpress.com/2008/08/charles-shaw-cabernet.jpg")
+wine26 = Wine.create!(vineyard: 'Charles Shaw', wine_type: 'Nouveau', location: 'CA', year: 2013, img_url: "http://1.bp.blogspot.com/-RY-r2ffbZH0/UqaL5EuMsbI/AAAAAAAAB8A/eV1dYW8PVUk/s1600/CS+Nouveau.jpg")
+wine27 = Wine.create!(vineyard: 'Charles Shaw', wine_type: 'White Zinfandel', location: 'CA', year: 2007, img_url: "https://tweedlibrarian.files.wordpress.com/2008/08/charles-shaw-white-zin.jpg")
+wine28 = Wine.create!(vineyard: 'Charles Shaw', wine_type: 'Merlot', location: 'CA', year: 2011, img_url: "http://horriblehousewife.com/wp-content/uploads/2012/12/Wine-with-Mallery-Charles-Shaw-Merlot-2011.jpg")
+wine29 = Wine.create!(vineyard: 'Stanger', wine_type: 'Master', location: 'Paso Robles', year: 2005, img_url: "http://www.stangervineyards.com/images/stanger_cab_label.jpg")
+wine30 = Wine.create!(vineyard: 'Stanger', wine_type: 'Master', location: 'Paso Robles', year: 2010, img_url: "https://i.ytimg.com/vi/HNlpKo0nf2k/maxresdefault.jpg")
+wine31 = Wine.create!(vineyard: 'Trione', wine_type: 'Cabernet Sauvignon', location: 'Alexander Valley', year: 2012, img_url: "https://talkavino.files.wordpress.com/2016/09/trione-vineyards-henrys-blend.jpg")
+wine32 = Wine.create!(vineyard: 'Dow\'s', wine_type: 'Porto', location: 'Bomfim', year: 2017, img_url: "https://www.finewinedelivery.co.nz/content/products/300/21118.jpg")
+wine33 = Wine.create!(vineyard: 'Fetzer', wine_type: 'Cabernet Sauvignon', location: 'Napa, CA', year: 2012, img_url: "http://www.totalwine.com/media/sys_master/twmmedia/h68/hd6/9194146922526.png")
+wine34 = Wine.create!(vineyard: 'Casillero del Diablo', wine_type: 'Cabernet Sauvignon', location: 'Chile', year: 2010, img_url: "https://onlinecashandcarry.co.uk/media/catalog/product/c/a/casillero_del_diablo_cabernet_sauvignon_187ml.jpg")
+wine35 = Wine.create!(vineyard: '14 Hands', wine_type: 'Cabernet Sauvignon', location: 'Columbia Valley', year: 2017, img_url: "http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/image/300x480/0dc2d03fe217f8c83829496872af24a0/1/4/14_hands_cab_mv_750.png")
+wine36 = Wine.create!(vineyard: 'V.No', wine_type: 'Malbec', location: 'Chile', year: 2010, img_url: "https://onlinecashandcarry.co.uk/media/catalog/product/c/a/casillero_del_diablo_cabernet_sauvignon_187ml.jpg")
+wine37 = Wine.create!(vineyard: 'Oak Grove', wine_type: 'Merlot', location: 'CA', year: 2013, img_url: "http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/image/300x480/0dc2d03fe217f8c83829496872af24a0/o/a/oak_grove_merlot_13_750.png")
+wine38 = Wine.create!(vineyard: 'Fetzer', wine_type: 'Riesling', location: 'CA', year: 2012, img_url: "https://www.haskells.com/media/catalog/product/cache/1/image/816x1200/040ec09b1e35df139433887a97daa66f/5/1/511176_0_1_2_1.jpg")
+wine39 = Wine.create!(vineyard: 'Fetzer', wine_type: 'Chardonnay', location: 'CA', year: 2016, img_url: "http://shop.surdyks.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/4/8/48959.jpg")
+wine40 = Wine.create!(vineyard: 'Fetzer', wine_type: 'Pinot Noir', location: 'CA', year: 2011, img_url: "http://cdn2.bigcommerce.com/server4900/7a906/images/stencil/750x750/products/9137/7645/Fetzer-Crimson-Pinot-Noir__86028.1422574732.jpg?c=2")
+wine41 = Wine.create!(vineyard: 'Frontera', wine_type: 'Chardonnay', location: 'Chile', year: 2014, img_url: "http://vinovinti.com/wp-content/uploads/2015/07/chard.jpg")
+wine42 = Wine.create!(vineyard: 'Coppola', wine_type: 'Chardonnay', location: 'Monterey County', year: 2013, img_url: "https://ffcp.s3.amazonaws.com/tfc/FCW/wines/diamond/Chardonnay/bottle_dia-chardonnay-m.png")
+wine43 = Wine.create!(vineyard: 'Gallo', wine_type: 'Chardonnay', location: 'Russian River Valley', year: 2009, img_url: "https://wine-searcher1.freetls.fastly.net/images/labels/01/01/gallo-winery-winemaker-s-signature-series-chardonnay-russian-river-valley-usa-10470101.jpg")
+wine44 = Wine.create!(vineyard: 'Olema', wine_type: 'Chardonnay', location: 'CA', year: 2010, img_url: "http://www.totalwine.com/media/sys_master/twmmedia/hbe/hab/8806706642974.png")
+wine45 = Wine.create!(vineyard: 'Sutter Home', wine_type: 'Zinfandel', location: 'CA', year: 2011, img_url: "http://www.sutterhome.com/sites/default/files/styles/wine_detail/public/wine/zinfandel-details_0.png?itok=_miA25vA")
+wine46 = Wine.create!(vineyard: 'Redwood Creek', wine_type: 'Zinfandel', location: 'CA', year: 2010, img_url: "https://www.figarowine.com/liquors/wp-content/uploads/2013/04/zin.png")
+wine47 = Wine.create!(vineyard: 'Clos du Bois', wine_type: 'Cabernet Sauvignon', location: 'CA', year: 2010, img_url: "http://s7d9.scene7.com/is/image/SAQ/00397497_is?$saq-prod-tra$")
+wine48 = Wine.create!(vineyard: 'Grande Alberone', wine_type: 'Zinfandel', location: 'Italy', year: 2010, img_url: "https://cdn.aldi-digital.ie/Grande-Alberone-Zinfandel.jpg?o=RQJEqbJxMX5Uj1BuUF9e%40Il7TeQj&V=5jb%24")
+wine49 = Wine.create!(vineyard: 'Zinfandelic', wine_type: 'Zinfandel', location: 'CA', year: 2014, img_url: "http://www.zinfandelic.com/images/lodi-sf-zinfandelic.jpg")
+wine50 = Wine.create!(vineyard: 'Beringer', wine_type: 'White Zinfandel', location: 'CA', year: 2011, img_url: "http://cdn1.bigcommerce.com/server1700/e6b77/products/14157/images/14529/beringer-main-and-vine-california-white-zinfandel-chardonnay__17921.1496359349.220.220.jpg?c=2")
 
-
-
-
-wines = [ wine1,
-          wine2,
-          wine3,
-          wine4,
-          wine5,
-          wine6,
-          wine7,
-          wine8,
-          wine9,
-          wine10,
-          wine11,
-          wine12,
-          wine13,
-          wine14,
-          wine15,
-          wine16,
-          wine17,
-          wine18,
-          wine19,
-          wine20,
-          wine21,
-          wine22,
-          wine23 ]
 
 comments = [ "Dilectable",
              "Very good with my favorite cheese",
@@ -81,21 +87,18 @@ comments = [ "Dilectable",
              "Find tannens",
              "Great legs, great color",
              "Flavorful, goes great with fish",
-             "This is my go to with steak!" ]
-
-users = [ user1,
-          user2,
-          user3,
-          user4,
-          user5,
-          user6,
-          user7 ]
+             "This is my go to with steak!",
+             "What and incredible year.",
+             "Thats REALLY Red",
+             "So Bad, so so so bad",
+             "mmmm"
+            ]
 
 Checkin.destroy_all
 60.times do
   Checkin.create!(rating: rand(1..5),
-                  comment: comments[rand(0..13)],
-                  wine_id: wines[rand(0..14)].id,
-                  user_id: users[rand(0..6)].id)
-
+                  comment: comments[rand(0..17)],
+                  wine_id: Wine.all[rand(0...50)].id,
+                  user_id: User.all[rand(0...12)].id
+                 )
 end
