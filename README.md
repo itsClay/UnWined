@@ -28,6 +28,16 @@ Users can add and edit their favorite or not so favorite wines. Alongside, they 
 
 Users may navigate to the Cellar to discover new wines or add a new wine to the database. If they decide they don't like their selected image or information provided, they may choose to edit that information on the wine show page. Additional features include error handling and an image preview.
 
+
+Making forms re-usable by passing in seperate actions based upon url params.
+```
+let formType = "new";
+if (ownProps.match.path == "/wines/:wineId/edit") {
+  wine = state.wines[ownProps.match.params.wineId];
+  formType = "edit";
+}
+```
+
 ### Authentication
 <img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1506704715/demo_login_dxbsif.png" height="180" />
 
@@ -37,6 +47,16 @@ Single layer authentication was created from scratch utilizing BCrypt modules an
 <img src="http://res.cloudinary.com/do2rg2v7p/image/upload/v1506706713/user_checkin_demo_f0xaco.gif" />
 
 Users may check-in and rate the wines they are having. If they decide they want to change their rating or comment, they may navigate to their profile page and edit their check-ins. Alongside there is a feed available to users to view what other users are having. Currently users have the ability to see the 20 most recent check-ins. If they desire, they may navigate to other users to see what wines they have been having.
+
+An example of handling ratings:
+``` javascript              
+<Rating
+  empty="fa fa-star-o fa-2x"
+  full="fa fa-star fa-2x"
+  onChange={ (rating) => this.setState({rating: rating}) }
+  initialRate={this.state.rating}
+/>
+```
 
 ### Database
 Database schema may be found in the [wiki](https://github.com/itsClay/UnWined/wiki/database-schema).
