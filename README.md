@@ -29,7 +29,7 @@ Users can add and edit their favorite or not so favorite wines. Alongside, they 
 Users may navigate to the Cellar to discover new wines or add a new wine to the database. If they decide they don't like their selected image or information provided, they may choose to edit that information on the wine show page. Additional features include error handling and an image preview.
 
 
-Making forms re-usable by passing in seperate actions based upon url params.
+Making forms re-usable by passing in separate actions based upon url params.
 ``` javascript
 let formType = "new";
 if (ownProps.match.path == "/wines/:wineId/edit") {
