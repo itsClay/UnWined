@@ -77,7 +77,7 @@ class CheckinsFormModal extends React.Component {
       transform                  : 'translate(-50%, 0)',
       bottom                     : 'auto',
       border                     : '1px solid #ccc',
-      background                 : '#B1ACD0',
+      background                 : '#f5f2e8',
       overflow                   : 'auto',
       WebkitOverflowScrolling    : 'touch',
       borderRadius               : '4px',
@@ -115,6 +115,7 @@ class CheckinsFormModal extends React.Component {
               </div>
               <form onSubmit={this.handleSubmit}>
                 <Rating
+                  className="star-rating"
                   empty="fa fa-star-o fa-2x"
                   full="fa fa-star fa-2x"
                   onChange={ (rating) => this.setState({rating: rating}) }

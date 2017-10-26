@@ -14,6 +14,7 @@ const CheckinsIndexItem = ({ checkin }) => {
           {checkin.comment}
         </div>
         <Rating
+          className="star-rating"
           empty="fa fa-star-o fa-2x"
           full="fa fa-star fa-2x"
           initialRate={checkin.rating}
