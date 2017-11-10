@@ -134,6 +134,16 @@ a:visited {
     margin-left: 15px;
   }
 }
+.wine-search input{
+  min-width: 40px;
+  height: 28px;
+  font-size: 14px;
+  border-width: 0 0 2px 0;
+}
+.wine-search input:focus {
+  outline-style: none;
+  border-color: $light-purple;
+}
 // wine#show related styles
 .wine-show {
   width: 700px;
