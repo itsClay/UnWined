@@ -146,10 +146,16 @@ a:visited {
   display: block;
   border-bottom: solid 2px $lightest-purple;
   transform: scaleX(0);
+  -webkit-transition: transform 250ms ease-in-out 180s;
+  -moz-transition: transform 250ms ease-in-out 180s;
+  -o-transition: transform 250ms ease-in-out 180s;
   transition: transform 250ms ease-in-out 180s;
 }
 .wine-search:hover:after {
   transform: scaleX(1);
+  -webkit-transition: transform 250ms ease-in-out;
+  -moz-transition: transform 250ms ease-in-out;
+  -o-transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
 } 
 .underline::after {
