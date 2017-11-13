@@ -8,9 +8,11 @@ class WinesIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ''
+      search: '',
+      underline: false
     }
     this.updateWineSearch = this.updateWineSearch.bind(this)
+    this.addUnderline = this.addUnderline.bind(this)
   }
 
   componentDidMount() {
@@ -21,6 +23,10 @@ class WinesIndex extends React.Component {
     e.preventDefault()
     this.setState({search: e.target.value})
     console.log(e.target.value)
+  }
+
+  addUnderline(){
+    this.setState({underline: true})
   }
 
   render() {
@@ -40,11 +46,12 @@ class WinesIndex extends React.Component {
         <div className="wine-idx-container">
           <div className="wine-idx-header">
             <span>Wines</span>
-            <div className="wine-search">
+            <div className={this.state.underline ? 'wine-search underline' : 'wine-search'}>
               <input type="text" 
                 value={this.state.search} 
                 onChange={this.updateWineSearch}
                 placeholder='Search Wines...'
+                onClick={this.addUnderline}
               />
             </div>
             <Link to="/wines/new">

@@ -146,10 +146,14 @@ a:visited {
   display: block;
   border-bottom: solid 2px $lightest-purple;
   transform: scaleX(0);
-  transition: transform 250ms ease-in-out
+  transition: transform 250ms ease-in-out 180s;
 }
 .wine-search:hover:after {
   transform: scaleX(1);
+  transition: transform 250ms ease-in-out;
+} 
+.underline::after {
+  border-bottom: solid 2px $light-purple;
 }
 // remove blue outlines
 .wine-search input:focus{
