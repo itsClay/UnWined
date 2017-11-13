@@ -138,11 +138,22 @@ a:visited {
   min-width: 40px;
   height: 28px;
   font-size: 14px;
-  border-width: 0 0 2px 0;
+  display: inline-block;
+  border: none;
 }
-.wine-search input:focus {
+.wine-search::after {
+  content: '';
+  display: block;
+  border-bottom: solid 2px $lightest-purple;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out
+}
+.wine-search:hover:after {
+  transform: scaleX(1);
+}
+// remove blue outlines
+.wine-search input:focus{
   outline-style: none;
-  border-color: $light-purple;
 }
 // wine#show related styles
 .wine-show {
