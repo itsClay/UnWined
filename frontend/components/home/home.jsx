@@ -1,8 +1,12 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import SessionFormContainer from "../session_form_container";
+
 import { AuthRoute, ProtectedRoute } from "../../util/route_util";
+
+import SessionFormContainer from "../session_form_container";
 import WinesContainer from "../wines/wines_index_container";
+import Search from "../search/search";
+import SearchContainer from "../search/search_container";
 
 class Home extends React.Component {
   constructor(props) {
@@ -30,6 +34,10 @@ class Home extends React.Component {
               <div className="nav-links">
                 <NavLink to="/feed">Feed</NavLink>
               </div>
+            </div>
+            <div className="search">
+              <p>searchbar</p>
+              <SearchContainer test="testing"/>
             </div>
             <div className="right-nav">
               <NavLink to="/profile" className="user-welcome">
