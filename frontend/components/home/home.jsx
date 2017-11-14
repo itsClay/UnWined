@@ -37,7 +37,7 @@ class Home extends React.Component {
             </div>
             <div className="search">
               <p>searchbar</p>
-              <SearchContainer test="testing"/>
+              <SearchContainer />
             </div>
             <div className="right-nav">
               <NavLink to="/profile" className="user-welcome">
