@@ -12,9 +12,6 @@ class Search extends React.Component {
   }
 
   handleChange(search) {
-    console.log(this)
-    console.log(this.props)
-    console.log('handling change')
     return (e) => {
       this.setState({ [search]: e.target.value })
     }
@@ -25,7 +22,6 @@ class Search extends React.Component {
   }
   
   render() {
-    console.log('this in render', this)
     return (
       <div>
         <input type="search"
