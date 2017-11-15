@@ -11,13 +11,6 @@ import { fetchWine } from '../../actions/wine_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
-  // this will probably not work with a modal
-  // if ( ownProps.match.path == "/wines") {
-  //   if (state.checkin[ownProps.match.params.checkinId]) {
-  //     checkin = state.checkin[ownProps.match.params.checkinId];
-  //   }
-  //   formType = 'new';
-  // }
   let checkin = {rating: 0, comment: ""};
   if(ownProps.checkinToChange) {
     checkin = ownProps.checkinToChange;
@@ -32,7 +25,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  // not sure yet on how to get this to work with w modal
+
   const action =
     ownProps.match.path === "/checkin/new" ? createCheckin : updateCheckin;
   return {

@@ -24,7 +24,7 @@ export const clearErrors = () => {
 
 export const login = (user) => dispatch => {
   return APIUtil.login(user).then(
-    receivedUser => dispatch(receiveUser( receivedUser )),
+    receivedUser => dispatch(receiveUser(receivedUser)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   );
 };
@@ -38,7 +38,7 @@ export const logout = () => dispatch => {
 
 export const signup = (user) => dispatch => {
   return APIUtil.signup(user).then(
-    receivedUser => dispatch(receiveUser( receivedUser )),
+    receivedUser => dispatch(receiveUser(receivedUser)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   );
 };

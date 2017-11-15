@@ -7,7 +7,7 @@ const receiveSearch = (query) => ({
 })
 
 export const fetchSearch = query => dispatch => {
-  return APIUtil.search(query).then(
+  return APIUtil.getSearch(query).then(
     results => dispatch(receiveSearch(results))
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import debounce from 'lodash.debounce';
 
 class Search extends React.Component {
   constructor(props) {
@@ -9,25 +10,27 @@ class Search extends React.Component {
       search: '',
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleSearch = debounce(() => props.fetchSearch(this.state.search), 1000).bind(this)
   }
 
-  handleChange(search) {
-    return (e) => {
-      this.setState({ [search]: e.target.value })
-    }
-    
-    // this.props.fetchSearch(this.state.search).then(
-    //   () => this.setState({ results })
-    // )
+  componentWillMount() {
+    // ...
+  }
+
+  handleChange(e) {
+    console.log(e)
+    this.setState({search: e.target.value})
+    this.handleSearch()
   }
   
   render() {
+    console.log(this)
     return (
       <div>
         <input type="search"
           placeholder="search"
           value={this.state.search}
-          onChange={this.handleChange('search')}
+          onChange={this.handleChange}
         />
         <ul>
           <li className="search-title">Users</li>
