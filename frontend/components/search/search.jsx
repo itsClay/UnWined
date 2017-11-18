@@ -22,6 +22,9 @@ class Search extends React.Component {
   
   render() {
     console.log(this)
+    const users = this.props.query.users ? this.props.query.users : []
+    const wines = this.props.query.wines ? this.props.query.wines : []
+
     return (
       <div>
         <input type="search"
@@ -29,9 +32,19 @@ class Search extends React.Component {
           value={this.state.search}
           onChange={this.handleChange}
         />
-        
-        <SearchResultsList props={this.props.query} />
-
+        <ul>
+          <li className="search-title">Users</li>
+          {
+            this.props.query.users &&
+            <SearchResultsList users={users} type="users" />
+          }
+          
+          <li className="search-title">Wines</li>
+          {
+            this.props.query.wines &&
+            <SearchResultsList wines={wines} type="wines"/>
+          }
+        </ul>
       </div>
     )
   }
