@@ -7,7 +7,7 @@ import SearchResultsList from './search_results_list';
 class Search extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { 
+    this.state = {
       loading: null,
       search: '',
     }
@@ -19,7 +19,7 @@ class Search extends React.Component {
     this.setState({search: e.target.value})
     this.handleSearch()
   }
-  
+
   render() {
     console.log(this)
     const users = this.props.query.users ? this.props.query.users : []
@@ -27,18 +27,19 @@ class Search extends React.Component {
 
     return (
       <div>
-        <input type="search"
+        <input
+          type="search"
           placeholder="search"
           value={this.state.search}
           onChange={this.handleChange}
         />
-        <ul>
+      <ul className="search-result">
           <li className="search-title">Users</li>
           {
             this.props.query.users &&
             <SearchResultsList users={users} type="users" />
           }
-          
+
           <li className="search-title">Wines</li>
           {
             this.props.query.wines &&
