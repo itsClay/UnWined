@@ -1,3 +1,13 @@
-// Place all the styles related to the api/search controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+}
+
+.search-result {
+  position: absolute;
+  background-color: green;
+  width: inherit;
+}
