@@ -12,6 +12,6 @@ const mapDispatchToProps = dispatch => ({
   fetchSearch: query => dispatch(fetchSearch(query))
 })
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Search)
+export default withRouter(connect(
+  mapStateToProps, mapDispatchToProps)(Search)
 );
