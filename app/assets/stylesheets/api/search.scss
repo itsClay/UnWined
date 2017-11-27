@@ -1,13 +1,49 @@
+@import '../colors.scss';
+
+.result:hover {
+  background-color: $sand;
+}
+.result {
+  padding: 3px 0 3px 0;
+}
+.results {
+  background-color: white;
+}
 .search {
   display: flex;
   align-items: center;
+  z-index: 1;
 }
-
+.search-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: $lightest-purple;
+  width: 194px;
+  height: 20px;
+  line-height: 20px;
+  padding: 3px 3px 3px 3px;
+  border-bottom: 1px solid $grey-border;
+}
 .search-input {
+  width: 194px;
+  font-family: $font-robo;
+  font-size: 14px;
+  border-radius: 3px;
+  border: 1px solid $grey-border;
+  padding: 3px;
 }
-
 .search-result {
   position: absolute;
-  background-color: green;
-  width: inherit;
+  // background-color: green;
+  width: 200px;
+  border: 1px solid $grey-border;
+  border-radius: 2px;
+}
+.searchtext {
+  margin-left: 3px;
+  padding: 3px 0 3px 0;
+}
+.sub {
+  font-size: 11px;
+  margin-left: 3px;
 }
