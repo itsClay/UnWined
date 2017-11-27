@@ -21,7 +21,7 @@ class UserProfile extends React.Component {
       this.props.fetchUser(currentPropsToChange.match.params.userId).then(
         () => this.setState({loading: false})
       );
-      this.setState({loading: true});
+      this.setState({loading: true})
     }
   }
   //we are calling this in 2 places because if a user navigates from
@@ -31,7 +31,7 @@ class UserProfile extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    if (this.props.match.path === newProps.match.path){
+    if (this.props.location.pathname === newProps.location.pathname){
       return;
     }
     this.componentStateSetup(newProps);
@@ -72,7 +72,6 @@ class UserProfile extends React.Component {
       );
     }
   }
-
 
   renderPersonalOrOtherUserMessage(){
     let userMessage;
