@@ -1,5 +1,4 @@
 import React from 'react';
-import withRouter from
 import { Link } from 'react-router-dom';
 
 const SearchResultsList = (props) => {
@@ -23,18 +22,40 @@ const SearchResultsList = (props) => {
   // wine ==> Fetzer Chardonnay 1999
   // user ==> ladiesman167
   return (
-    <ul>
+    <ul className="results">
       {
+
         items.map(el => {
-          let result = ""
+          let displayTextHead = "";
+          let displayTextBody = "";
           for (let idx in renderAttrs) {
-            result += el[renderAttrs[idx]] + " "
+            switch(renderAttrs[idx]) {
+              case 'username':
+                displayTextHead = el[renderAttrs[idx]]
+                break;
+              case 'vineyard':
+                displayTextBody += el[renderAttrs[idx]] + " "
+                break;
+              case 'wine_type':
+                displayTextHead = el[renderAttrs[idx]]
+                break;
+              case 'year':
+                displayTextBody += el[renderAttrs[idx]] + " "
+                break;
+            }
+
           }
           return (
             <li
               key={`${props.type}-${el.id}`}
+              className="result"
             >
-            <Link to={destination + `${el.id}`}>{result}</Link>
+            <Link to={destination + `${el.id}`}>
+              <div>
+                <p className="searchtext">{displayTextHead}</p>
+                <p className="sub">{displayTextBody}</p>
+              </div>
+            </Link>
             </li>
           )
         })
