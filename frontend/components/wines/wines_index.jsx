@@ -22,7 +22,6 @@ class WinesIndex extends React.Component {
   updateWineSearch(e) {
     e.preventDefault()
     this.setState({search: e.target.value})
-    console.log(e.target.value)
   }
 
   addUnderline(){
@@ -34,7 +33,7 @@ class WinesIndex extends React.Component {
 
     const wines = this.props.wines.filter(
       (wine) => {
-        if (wine.vineyard.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 || 
+        if (wine.vineyard.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
           wine.wine_type.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
             return wine;
           }
@@ -47,8 +46,8 @@ class WinesIndex extends React.Component {
           <div className="wine-idx-header">
             <span>Wines</span>
             <div className={this.state.underline ? 'wine-search underline' : 'wine-search'}>
-              <input type="text" 
-                value={this.state.search} 
+              <input type="text"
+                value={this.state.search}
                 onChange={this.updateWineSearch}
                 placeholder='Search Wines...'
                 onClick={this.addUnderline}
