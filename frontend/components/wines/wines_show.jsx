@@ -3,6 +3,7 @@ import { Link, Route, withRouter } from "react-router-dom";
 import CheckinsIndexItem from "../checkins/checkins_index_item";
 import CheckinsFormContainer from '../checkins/checkins_form_container';
 
+
 class WinesShow extends React.Component {
   constructor(props) {
     super(props);
@@ -11,6 +12,13 @@ class WinesShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchWine(this.props.match.params.wineId);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if(this.props.location.pathname != newProps.location.pathname) {
+      this.props.fetchWine(newProps.match.params.wineId)
+    }
+    return;
   }
 
   // leaving functionality in for future use - currently
