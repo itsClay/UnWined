@@ -38,6 +38,8 @@
   width: 200px;
   border: 1px solid $grey-border;
   border-radius: 2px;
+  max-height: 65vh;
+  overflow: auto;
 }
 .searchtext {
   margin-left: 3px;
