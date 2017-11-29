@@ -50,7 +50,7 @@ const SearchResultsList = (props) => {
               key={`${props.type}-${el.id}`}
               className="result"
             >
-            <Link to={destination + `${el.id}`}>
+            <Link to={destination + `${el.id}`} onClick={props.searchBlur}>
               <div>
                 <p className="searchtext">{displayTextHead}</p>
                 <p className="sub">{displayTextBody}</p>

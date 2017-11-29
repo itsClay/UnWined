@@ -10,10 +10,14 @@ class Search extends React.Component {
     this.state = {
       loading: null,
       search: '',
+      active: false,
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSearch = debounce(() => props.fetchSearch(this.state.search), 1000).bind(this)
     this.displayResults = this.displayResults.bind(this)
+    this.searchBlur = this.searchBlur.bind(this)
+    this.searchFocus = this.searchFocus.bind(this)
+    this.focusOnCurrentTarget = this.focusOnCurrentTarget.bind(this)
   }
 
   handleChange(e) {
@@ -22,18 +26,20 @@ class Search extends React.Component {
   }
 
   displayResults(users, wines) {
-    if(this.state.search === '') {
+    if(this.state.search === '' || this.state.active === false) {
       return;
     } else {
       return (
-        <ul className="search-result">
+        <ul 
+          className="search-result"
+          onBlur={this.searchBlur}>
           <div className="search-title">
             <li>Users</li>
             <li className="sub">({users.length})</li>
           </div>
           {
             this.props.query.users &&
-            <SearchResultsList users={users} type="users" />
+            <SearchResultsList users={users} type="users" searchBlur={this.searchBlur}/>
           }
           <div className="search-title">
             <li>Wines</li>
@@ -41,11 +47,38 @@ class Search extends React.Component {
           </div>
           {
             this.props.query.wines &&
-            <SearchResultsList wines={wines} type="wines"/>
+            <SearchResultsList wines={wines} type="wines" searchBlur={this.searchBlur}/>
           }
         </ul>
       )
     }
+  }
+
+  searchFocus() {
+    this.setState({active: true})
+  }
+  
+  searchBlur(event) {
+    // console.log(e)
+    if(!this.focusOnCurrentTarget(event)) {
+      console.log('we blurred')
+      this.setState({active: false})
+    }
+  }
+  // helper method for searchBlurs 
+  focusOnCurrentTarget({relatedTarget, currentTarget}) {
+    if (relatedTarget === null) return false;
+    let parent = relatedTarget.parentNode
+    console.log(relatedTarget)
+    console.log(currentTarget)
+
+    // traverse up the parents till we hit current target
+    while (parent !== null) {
+      if(parent === currentTarget) return true;
+      parent = parent.parentNode;
+    }
+    
+    return false;
   }
 
   render() {
@@ -53,15 +86,17 @@ class Search extends React.Component {
     const wines = this.props.query.wines ? this.props.query.wines : []
 
     return (
-      <div>
+      <div onBlur={this.searchBlur}>
         <input
           placeholder="search"
           value={this.state.search}
           onChange={this.handleChange}
-          onFocus={this.displayResults}
+          onFocus={this.searchFocus}
           className="search-input"
         />
-      {this.displayResults(users, wines)}
+      {
+        this.displayResults(users, wines)
+      }
       </div>
     )
   }
