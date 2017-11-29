@@ -61,16 +61,13 @@ class Search extends React.Component {
   searchBlur(event) {
     // console.log(e)
     if(!this.focusOnCurrentTarget(event)) {
-      console.log('we blurred')
       this.setState({active: false})
     }
   }
-  // helper method for searchBlurs 
+  // helper method for searchBlur
   focusOnCurrentTarget({relatedTarget, currentTarget}) {
     if (relatedTarget === null) return false;
     let parent = relatedTarget.parentNode
-    console.log(relatedTarget)
-    console.log(currentTarget)
 
     // traverse up the parents till we hit current target
     while (parent !== null) {
