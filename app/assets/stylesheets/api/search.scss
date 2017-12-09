@@ -1,8 +1,12 @@
 @import '../colors.scss';
 
 .clear-input {
-  position: relative;
-  left: -28px;
+  margin-left: -28px;
+  border-radius: 50%;
+  border: none;
+  color: $light-purple;
+  font-size: 12px;
+  vertical-align: center;
 }
 
 .result:hover {
