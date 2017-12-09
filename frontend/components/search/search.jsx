@@ -18,6 +18,7 @@ class Search extends React.Component {
     this.searchBlur = this.searchBlur.bind(this)
     this.searchFocus = this.searchFocus.bind(this)
     this.focusOnCurrentTarget = this.focusOnCurrentTarget.bind(this)
+    this.clearSearch = this.clearSearch.bind(this)
   }
 
   handleChange(e) {
@@ -78,6 +79,10 @@ class Search extends React.Component {
     return false;
   }
 
+  clearSearch() {
+    this.setState({search: ''})
+  }
+
   render() {
     const users = this.props.query.users ? this.props.query.users : []
     const wines = this.props.query.wines ? this.props.query.wines : []
@@ -91,6 +96,9 @@ class Search extends React.Component {
           onFocus={this.searchFocus}
           className="search-input"
         />
+        <button 
+          className="clear-input"
+          onClick={this.clearSearch}>X</button>
       {
         this.displayResults(users, wines)
       }
