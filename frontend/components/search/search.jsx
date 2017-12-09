@@ -88,7 +88,7 @@ class Search extends React.Component {
     const wines = this.props.query.wines ? this.props.query.wines : []
 
     return (
-      <div onBlur={this.searchBlur}>
+      <div  onBlur={this.searchBlur}>
         <input
           placeholder="search"
           value={this.state.search}
@@ -98,7 +98,7 @@ class Search extends React.Component {
         />
         <button 
           className="clear-input"
-          onClick={this.clearSearch}>X</button>
+          onClick={this.clearSearch}>&#10006;</button>
       {
         this.displayResults(users, wines)
       }
