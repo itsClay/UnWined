@@ -1,5 +1,10 @@
 @import '../colors.scss';
 
+.clear-input {
+  position: relative;
+  left: -28px;
+}
+
 .result:hover {
   background-color: $sand;
 }
