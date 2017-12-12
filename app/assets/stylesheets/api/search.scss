@@ -1,12 +1,22 @@
 @import '../colors.scss';
 
 .clear-input {
-  margin-left: -28px;
-  border-radius: 50%;
+  // positioning clear input inside search text
+  position: relative;
+  border-radius: 3px;
+  right: 24px;
+  bottom: 1px;
+  background-color: transparent;
   border: none;
   color: $light-purple;
-  font-size: 12px;
-  vertical-align: center;
+  text-align: center;
+  outline-style: none;
+  line-height: 19px;
+  box-sizing: border-box;
+}
+.clear-input:hover {
+  color: white;
+  background-color: $light-purple;
 }
 
 .result:hover {
