@@ -88,7 +88,7 @@ class Search extends React.Component {
     const wines = this.props.query.wines ? this.props.query.wines : []
 
     return (
-      <div  onBlur={this.searchBlur}>
+      <div onBlur={this.searchBlur}>
         <input
           placeholder="search"
           value={this.state.search}
