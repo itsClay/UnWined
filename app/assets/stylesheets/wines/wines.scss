@@ -134,34 +134,34 @@ a:visited {
     margin-left: 15px;
   }
 }
+
 .wine-search input{
   min-width: 40px;
   height: 28px;
   font-size: 14px;
   display: inline-block;
   border: none;
+  outline-style: none;
 }
+
 .wine-search::after {
   content: '';
   display: block;
-  border-bottom: solid 2px $lightest-purple;
   transform: scaleX(0);
-  -webkit-transition: transform 250ms ease-in-out 180s;
-  -moz-transition: transform 250ms ease-in-out 180s;
-  -o-transition: transform 250ms ease-in-out 180s;
-  transition: transform 250ms ease-in-out 180s;
 }
-.wine-search:hover:after {
+.wine-search:hover::after {
   transform: scaleX(1);
   -webkit-transition: transform 250ms ease-in-out;
   -moz-transition: transform 250ms ease-in-out;
   -o-transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
+  border-bottom: solid 2px $light-purple;
 } 
 .underline::after {
   border-bottom: solid 2px $light-purple;
+  transform: scaleX(1);
 }
-// remove blue outlines
+// remove default blue outlines
 .wine-search input:focus{
   outline-style: none;
 }
